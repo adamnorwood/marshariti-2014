@@ -10,3 +10,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Howdy, all!
 */
+@font-face {
+  font-family: 'HandSlabRegular';
+  src: url("fonts/handslab/handslab-regular-webfont.eot");
+  src: url("fonts/handslab/handslab-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/handslab/handslab-regular-webfont.woff") format("woff"), url("fonts/handslab/handslab-regular-webfont.ttf") format("truetype"), url("fonts/handslab/handslab-regular-webfont.svg#HandSlabRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 17, sass/base-typography/_typography.scss */
+body {
+  text-rendering: optimizeLegitability; }
