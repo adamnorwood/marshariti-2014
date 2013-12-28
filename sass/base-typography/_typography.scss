@@ -3,13 +3,12 @@
 $display-font-stack:   HandSlabRegular, Helvetica, Arial, Sans-serif;
 $sans-font-stack:      Helvetica, Arial, Sans-serif;
 $serif-font-stack:     "chaparral-pro", Georgia, "Lucida Grande", Serif;
-$monospace-font-stack: Consolas, Inconsolata, Monaco, "Courier New", Monospace;
 
 // Declare variables that will set our basic typographical scales and
 // relative proportions.
-$base-font-size:       18px;
-$line-height:          1.6;
-$modular-scale:        1.25;
+$base-font-size-px: 16px;
+$base-font-size:    1rem; /* 16px */
+$modular-scale:     1.25;
 
 // Improves typographical rendering in browsers that support this feature.
 // May need to be monitored to ensure that this global use does not
@@ -23,29 +22,36 @@ body {
 // parameter indicate a higher node in the scale, negative numbers are likewise
 // nodes smaller than the base font size.
 %type-size-largest {
-    font-size: modular-scale($base-font-size, 4, $modular-scale);
+    font-size: modular-scale($base-font-size-px, 4, $modular-scale);
+    font-size: modular-scale($base-font-size,    4, $modular-scale);
 }
 
 %type-size-larger {
-    font-size: modular-scale($base-font-size, 3, $modular-scale);
+    font-size: modular-scale($base-font-size-px, 3, $modular-scale);
+    font-size: modular-scale($base-font-size,    3, $modular-scale);
 }
 
 %type-size-large {
-    font-size: modular-scale($base-font-size, 2, $modular-scale);
+    font-size: modular-scale($base-font-size-px, 2, $modular-scale);
+    font-size: modular-scale($base-font-size,    2, $modular-scale);
 }
 
 %type-size-base {
+    font-size: $base-font-size-px;
     font-size: $base-font-size;
 }
 
 %type-size-small {
-    font-size: modular-scale($base-font-size, -1, $modular-scale);
+    font-size: modular-scale($base-font-size-px, -1, $modular-scale);
+    font-size: modular-scale($base-font-size,    -1, $modular-scale);
 }
 
 %type-size-smaller {
-    font-size: modular-scale($base-font-size, -2, $modular-scale);
+    font-size: modular-scale($base-font-size-px, -2, $modular-scale);
+    font-size: modular-scale($base-font-size,    -2, $modular-scale);
 }
 
 %type-size-smallest {
-    font-size: modular-scale($base-font-size, -3, $modular-scale);
+    font-size: modular-scale($base-font-size-px, -3, $modular-scale);
+    font-size: modular-scale($base-font-size,    -3, $modular-scale);
 }

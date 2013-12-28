@@ -1,0 +1,7 @@
+@import 'normalize';
+@import 'visuallyhidden';
+
+// Apply Boubon's box-sizing mixin to all elements
+*, *:before, *:after {
+    @include box-sizing(border-box);
+}
