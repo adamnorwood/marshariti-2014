@@ -1,0 +1,157 @@
+// ----------------------------------------------------------------------------
+// Atomic Styles
+// These styles all apply to basic, can't-be-broken-down HTML elements, and
+// are the basic building blocks of all other content
+//
+// Table of Contents:
+//
+// * #TOP-LEVEL ATOMS
+// * #ANCHORS
+// * #HEADINGS
+// * #TEXT BLOCKS
+// * #LISTS
+// * #TABLES
+// * #FORMS AND CONTROLS
+// * #MEDIA ELEMENTS
+//
+// ----------------------------------------------------------------------------
+
+// #TOP-LEVEL ATOMS -----------------------------
+
+body {
+}
+
+
+// #ANCHORS -------------------------------------
+
+a {
+}
+
+a:visited {
+}
+
+a:hover, a:focus {
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+}
+
+
+// #HEADINGS ------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+
+// #TEXT BLOCKS ---------------------------------
+
+p {
+
+}
+
+blockquote {
+
+}
+
+blockquote i, blockquote em {
+
+}
+
+article {
+
+}
+
+aside {
+
+}
+
+code {
+}
+
+
+// #LISTS ---------------------------------------
+
+ul, ol, dl {
+
+}
+
+li, dd {
+
+}
+
+dt, dd {
+
+}
+
+dt {
+
+}
+
+dd {
+
+}
+
+
+// #TABLES --------------------------------------
+
+table {
+}
+
+th {
+}
+
+th, td {
+}
+
+tr:last-child th, tr:last-child td {
+}
+
+caption {
+ }
+
+
+// #FORMS and CONTROLS --------------------------
+
+label {
+}
+
+label, input[type="submit"], button {
+}
+
+input[type="submit"], button {
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+button:hover,
+button:focus {
+}
+
+
+// #MEDIA ELEMENTS ------------------------------
+video, audio {
+}
