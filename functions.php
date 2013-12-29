@@ -46,7 +46,8 @@ function marshariti_styles_and_scripts() {
     wp_enqueue_style( 'marshariti-style', get_stylesheet_uri(), array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
 
     // Register our main scripts file, with jQuery dependency
-    wp_enqueue_script( 'marshariti-scripts', get_stylesheet_directory_uri() . '/js/scripts.min.js', array('jquery'), filemtime( get_stylesheet_directory() . '/js/scripts.min.js' ), true );
+    wp_enqueue_script( 'marshariti-modernizr', get_stylesheet_directory_uri() . '/js/modernizr.min.js', false, filemtime( get_stylesheet_directory() . '/js/modernizr.min.js' ), false );
+    wp_enqueue_script( 'marshariti-scripts',   get_stylesheet_directory_uri() . '/js/scripts.min.js', array('jquery'), filemtime( get_stylesheet_directory() . '/js/scripts.min.js' ), true );
 
 }
 add_action( 'wp_enqueue_scripts', 'marshariti_styles_and_scripts' );

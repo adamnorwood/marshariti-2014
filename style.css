@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Marsha Riti 2014
 Theme URI: http://marshariti.com/
@@ -480,4 +481,158 @@ table {
 /* line 16, sass/base-typography/_typography.scss */
 body {
   text-rendering: optimizeLegitability;
+}
+
+/* line 34, sass/base-typography/_typography.scss */
+#masthead .menu-toggle {
+  font-size: 25px;
+  font-size: 1.5625rem;
+}
+
+/* line 21, sass/_atoms.scss */
+body {
+  border-top: 1.5rem solid #def0eb;
+  font-family: "chaparral-pro", Georgia, "Lucida Grande", Serif;
+}
+
+/* line 1, sass/molecules/_site-header.scss */
+#masthead {
+  *zoom: 1;
+  position: relative;
+}
+/* line 18, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+#masthead:before, #masthead:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+#masthead:after {
+  clear: both;
+}
+/* line 5, sass/molecules/_site-header.scss */
+#masthead .site-title {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+  background-image: url(images/marsha-riti.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 200px;
+  height: 113px;
+  margin: 2rem auto;
+}
+/* line 15, sass/molecules/_site-header.scss */
+#masthead .site-title:focus, #masthead .site-title:active {
+  outline: thin dotted #999;
+}
+/* line 20, sass/molecules/_site-header.scss */
+#masthead .menu-toggle {
+  font-weight: normal;
+  text-transform: lowercase;
+  background-color: #eb905f;
+  position: absolute;
+  top: -1.5rem;
+  right: 0.5rem;
+  color: white;
+  transition: background-color 0.5s, padding-top 0.5s;
+  padding: 0.25rem 0.6666rem;
+  text-align: center;
+  margin: 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  z-index: 9;
+}
+/* line 37, sass/molecules/_site-header.scss */
+#masthead .menu-toggle:hover, #masthead .menu-toggle:focus {
+  background-color: #ca571a;
+  cursor: pointer;
+  padding-top: 1.5rem;
+}
+/* line 43, sass/molecules/_site-header.scss */
+#masthead .menu-toggle:before {
+  content: '☰';
+}
+/* line 47, sass/molecules/_site-header.scss */
+#masthead .menu-toggle.toggled-on:before {
+  content: '▲';
+}
+
+/* line 53, sass/molecules/_site-header.scss */
+.js #sitewide-navigation .nav-menu {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+}
+/* line 14, sass/utilities/_visuallyhidden.scss */
+.js #sitewide-navigation .nav-menu.focusable:active, .js #sitewide-navigation .nav-menu.focusable:focus {
+  clip: auto;
+  position: static;
+  overflow: visible;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+/* line 57, sass/molecules/_site-header.scss */
+.js #sitewide-navigation .nav-menu.toggled-on {
+  clip: auto;
+  clip: rect(auto auto auto auto);
+  position: static;
+  overflow: visible;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+/* line 61, sass/molecules/_site-header.scss */
+.menu-primary-menu-container {
+  position: absolute;
+  top: -1.5rem;
+  width: 100%;
+  border-top: 0.5rem solid #eb905f;
+}
+/* line 67, sass/molecules/_site-header.scss */
+.menu-primary-menu-container.toggled-on {
+  border-bottom: 0.5rem solid #eb905f;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* line 75, sass/molecules/_site-header.scss */
+#sitewide-navigation .nav-menu,
+#sitewide-navigation .menu-item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 81, sass/molecules/_site-header.scss */
+#sitewide-navigation .menu-item a {
+  font-family: HandSlabRegular, Helvetica, Arial, Sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  padding: 1rem 0;
+  text-decoration: none;
+  border-top: 1px dashed #ffcc00;
+  color: black;
+  background-color: white;
+}
+/* line 92, sass/molecules/_site-header.scss */
+#sitewide-navigation .menu-item a:hover, #sitewide-navigation .menu-item a:focus {
+  background: #e57032;
+  color: white;
+}
+/* line 98, sass/molecules/_site-header.scss */
+#sitewide-navigation .menu-item:first-child a {
+  border-top: 0;
+}
+
+/* line 1, sass/molecules/_site-footer.scss */
+#sitewide-footer {
+  display: none;
 }

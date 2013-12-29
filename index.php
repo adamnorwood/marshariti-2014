@@ -12,6 +12,4 @@
 
 <?php get_header(); ?>
 
-CONTENT GOES HERE
-
 <?php get_footer(); ?>
