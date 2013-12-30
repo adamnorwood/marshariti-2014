@@ -12,8 +12,27 @@ Howdy, all!
 */
 
 @import 'bourbon/bourbon';
-@import 'utilities/utilities';
 @import 'base-colors/base-colors';
+@import 'layout/grid-settings';
+@import 'neat/neat';
+@import 'utilities/utilities';
 @import 'base-typography/typography';
+@import 'layout/layout';
 @import 'atoms';
 @import 'molecules/molecules';
+
+/* The following section is for troubleshooting breakpoints,
+   by injecting a bg color for body depending on the current
+   display size */
+$showBreakPointBGColors: false;
+@if $showBreakPointBGColors {
+    body {
+        @include media($smallest) { background-color: orange;  }
+        @include media($smaller)  { background-color: red;     }
+        @include media($small)    { background-color: blue;    }
+        @include media($normal)   { background-color: green;   }
+        @include media($large)    { background-color: yellow;  }
+        @include media($larger)   { background-color: hotpink; }
+        @include media($largest)  { background-color: purple;  }
+    }
+}

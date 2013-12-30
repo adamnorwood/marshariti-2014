@@ -7,117 +7,37 @@
         background-image: url(images/marsha-riti.png);
         background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
         display: block;
-        width: 200px;
-        height: 113px;
+        width: 210px;
+        height: 119px;
         margin: 2rem auto;
 
         &:focus, &:active {
             outline: thin dotted #999;
         }
-    }
 
-    .menu-toggle {
-        @extend %type-size-large;
-        font-weight: normal;
-        text-transform: lowercase;
-        background-color: lighten($secondary-color, 10%);
-        position: absolute;
-        top: -1.5rem;
-        right: 0.5rem;
-        color: $white;
-        transition: background-color 0.5s, padding-top 0.5s;
-        padding: 0.25rem 0.6666rem;
-        text-align: center;
-        margin: 0;
-        border-bottom-right-radius: 6px;
-        border-bottom-left-radius: 6px;
-        border: 3px solid transparent;
-        border-top: 0;
-        z-index: 9;
-        box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-
-        &:hover, &:focus {
-            background-color: darken($secondary-color, 10%);
-            cursor: pointer;
-            padding-top: 1.5rem;
-            outline: 0;
-            border: 3px solid lighten($secondary-color, 30%);
-            border-top: 0;
-        }
-
-        &:before {
-            content: '☰';
-        }
-
-        &.toggled-on:before {
-            content: '▲';
+        @include media($normal) {
+            margin: 2rem 4rem;
+            width: 250px;
+            height: 142px;
+            float: left;
         }
     }
 }
 
-.js #sitewide-navigation .nav-menu {
-    @include visuallyhidden;
-}
+.skip-link {
+    @extend %type-size-large;
+    text-align: center;
+    background: darken($secondary-color,30%);
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    transition: background-color 1s;
+    padding: 0.75rem 0;
 
-.js #sitewide-navigation .nav-menu.toggled-on {
-    @include visuallyshown;
-}
-
-.menu-primary-menu-container {
-    position: absolute;
-    top: -1.5rem;
-    width: 100%;
-    border-top: 0.5rem solid lighten($secondary-color, 10%);
-
-    &.toggled-on {
-        border-bottom: 0.5rem solid lighten($secondary-color, 10%);
-        box-shadow: 0 5px 12px rgba(0,0,0,0.1);
-    }
-}
-
-#sitewide-navigation {
-    .nav-menu,
-    .menu-item {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .menu-item a {
-        font-family: $display-font-stack;
-        text-align: center;
-        text-transform: uppercase;
-        display: block;
-        padding: 1rem 0;
-        text-decoration: none;
-        border-top: 1px dashed $tertiary-color;
-        color: $primary-color;
-        background-color: $white;
-
-        &:hover, &:focus {
-            background: $secondary-color;
-            color: $white;
-        }
-    }
-
-    .menu-item:first-child a {
-        border-top: 0;
-    }
-
-    .skip-link {
-        @extend %type-size-large;
-        text-align: center;
-        background: darken($secondary-color,30%);
-        color: $white;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: block;
-        transition: background-color 1s;
-        padding: 0.75rem 0;
-    }
-
-    .skip-link:focus {
+    &:focus {
         background: $secondary-color;
         outline: 4px solid lighten($secondary-color, 20%);
     }

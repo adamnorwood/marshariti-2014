@@ -18,17 +18,18 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <header id="masthead" class="sitewide-header" role="banner">
-            <a class="home-link site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                <h1><?php bloginfo( 'name' ); ?></h1>
-            </a>
+        <div class="container">
+            <header id="masthead" class="sitewide-header" role="banner">
+                <a class="home-link site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                    <h1><?php bloginfo( 'name' ); ?></h1>
+                </a>
 
-            <nav id="sitewide-navigation" class="navigation main-navigation navbar" role="navigation">
-                <a class="visuallyhidden focusable skip-link" href="#main" title="Skip to content">Skip to content</a>
-                <h2 class="menu-toggle" tabindex="0"><b class="visuallyhidden">Menu</b></h2>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-            </nav>
+                <nav id="sitewide-navigation" class="navigation main-navigation navbar" role="navigation">
+                    <a class="visuallyhidden focusable skip-link" href="#main" title="Skip to content">Skip to content</a>
+                    <h2 class="menu-toggle" tabindex="0"><b class="visuallyhidden">Menu</b></h2>
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+                </nav>
 
-        </header>
+            </header>
 
-        <main id="main">
+            <main id="main">
