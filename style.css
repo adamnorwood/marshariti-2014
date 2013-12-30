@@ -484,7 +484,7 @@ body {
 }
 
 /* line 34, sass/base-typography/_typography.scss */
-#masthead .menu-toggle {
+#masthead .menu-toggle, #sitewide-navigation .skip-link {
   font-size: 25px;
   font-size: 1.5625rem;
 }
@@ -541,24 +541,30 @@ body {
   margin: 0;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
+  border: 3px solid transparent;
+  border-top: 0;
   z-index: 9;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
-/* line 37, sass/molecules/_site-header.scss */
+/* line 40, sass/molecules/_site-header.scss */
 #masthead .menu-toggle:hover, #masthead .menu-toggle:focus {
   background-color: #ca571a;
   cursor: pointer;
   padding-top: 1.5rem;
+  outline: 0;
+  border: 3px solid #f6cfba;
+  border-top: 0;
 }
-/* line 43, sass/molecules/_site-header.scss */
+/* line 49, sass/molecules/_site-header.scss */
 #masthead .menu-toggle:before {
   content: '☰';
 }
-/* line 47, sass/molecules/_site-header.scss */
+/* line 53, sass/molecules/_site-header.scss */
 #masthead .menu-toggle.toggled-on:before {
   content: '▲';
 }
 
-/* line 53, sass/molecules/_site-header.scss */
+/* line 59, sass/molecules/_site-header.scss */
 .js #sitewide-navigation .nav-menu {
   border: 0;
   clip: rect(0 0 0 0);
@@ -579,7 +585,7 @@ body {
   height: auto;
 }
 
-/* line 57, sass/molecules/_site-header.scss */
+/* line 63, sass/molecules/_site-header.scss */
 .js #sitewide-navigation .nav-menu.toggled-on {
   clip: auto;
   clip: rect(auto auto auto auto);
@@ -590,27 +596,27 @@ body {
   height: auto;
 }
 
-/* line 61, sass/molecules/_site-header.scss */
+/* line 67, sass/molecules/_site-header.scss */
 .menu-primary-menu-container {
   position: absolute;
   top: -1.5rem;
   width: 100%;
   border-top: 0.5rem solid #eb905f;
 }
-/* line 67, sass/molecules/_site-header.scss */
+/* line 73, sass/molecules/_site-header.scss */
 .menu-primary-menu-container.toggled-on {
   border-bottom: 0.5rem solid #eb905f;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* line 75, sass/molecules/_site-header.scss */
+/* line 81, sass/molecules/_site-header.scss */
 #sitewide-navigation .nav-menu,
 #sitewide-navigation .menu-item {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 81, sass/molecules/_site-header.scss */
+/* line 87, sass/molecules/_site-header.scss */
 #sitewide-navigation .menu-item a {
   font-family: HandSlabRegular, Helvetica, Arial, Sans-serif;
   text-align: center;
@@ -622,14 +628,30 @@ body {
   color: black;
   background-color: white;
 }
-/* line 92, sass/molecules/_site-header.scss */
+/* line 98, sass/molecules/_site-header.scss */
 #sitewide-navigation .menu-item a:hover, #sitewide-navigation .menu-item a:focus {
   background: #e57032;
   color: white;
 }
-/* line 98, sass/molecules/_site-header.scss */
+/* line 104, sass/molecules/_site-header.scss */
 #sitewide-navigation .menu-item:first-child a {
   border-top: 0;
+}
+/* line 108, sass/molecules/_site-header.scss */
+#sitewide-navigation .skip-link {
+  text-align: center;
+  background: #70300e;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  transition: background-color 1s;
+  padding: 0.75rem 0;
+}
+/* line 120, sass/molecules/_site-header.scss */
+#sitewide-navigation .skip-link:focus {
+  background: #e57032;
+  outline: 4px solid #f0af8d;
 }
 
 /* line 1, sass/molecules/_site-footer.scss */

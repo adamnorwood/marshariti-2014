@@ -24,7 +24,11 @@
             </a>
 
             <nav id="sitewide-navigation" class="navigation main-navigation navbar" role="navigation">
-                <h2 class="menu-toggle"><b class="visuallyhidden">Menu</b></h2>
+                <a class="visuallyhidden focusable skip-link" href="#main" title="Skip to content">Skip to content</a>
+                <h2 class="menu-toggle" tabindex="0"><b class="visuallyhidden">Menu</b></h2>
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
             </nav>
+
         </header>
+
+        <main id="main">

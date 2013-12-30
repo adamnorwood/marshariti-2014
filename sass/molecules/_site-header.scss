@@ -32,12 +32,18 @@
         margin: 0;
         border-bottom-right-radius: 6px;
         border-bottom-left-radius: 6px;
+        border: 3px solid transparent;
+        border-top: 0;
         z-index: 9;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
 
         &:hover, &:focus {
             background-color: darken($secondary-color, 10%);
             cursor: pointer;
             padding-top: 1.5rem;
+            outline: 0;
+            border: 3px solid lighten($secondary-color, 30%);
+            border-top: 0;
         }
 
         &:before {
@@ -97,5 +103,22 @@
 
     .menu-item:first-child a {
         border-top: 0;
+    }
+
+    .skip-link {
+        @extend %type-size-large;
+        text-align: center;
+        background: darken($secondary-color,30%);
+        color: $white;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: block;
+        transition: background-color 1s;
+        padding: 0.75rem 0;
+    }
+
+    .skip-link:focus {
+        background: $secondary-color;
+        outline: 4px solid lighten($secondary-color, 20%);
     }
 }

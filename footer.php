@@ -7,6 +7,8 @@
  */
 ?>
 
+        </main>
+
         <footer id="sitewide-footer" class="sitewide-footer" role="contentinfo">
             Unless otherwise noted, all work is copyright <?php echo date('Y'); ?>. Thanks for visiting!
         </footer>
