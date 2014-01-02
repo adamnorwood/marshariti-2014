@@ -2,8 +2,10 @@
     .menu-primary-menu-container {
         position: absolute;
         top: -1.5rem;
-        width: 100%;
+        width: 110%;
         border-top: 0.5rem solid lighten($secondary-color, 10%);
+        margin-left: -1rem;
+        margin-right: -1rem;
 
         &.toggled-on {
             border-bottom: 0.5rem solid lighten($secondary-color, 10%);
@@ -23,6 +25,8 @@
         @include media($normal) {
             width: 40em;
             float: right;
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 
@@ -97,7 +101,7 @@
             text-decoration: none;
             border-top: 1px dashed $tertiary-color;
             color: $primary-color;
-            background-color: $white;
+            background-color: rgba(255,255,255,0.95);
             transition: background-color 0.25s;
 
             &:hover, &:focus {
@@ -118,10 +122,11 @@
                 border-top: 0;
                 padding: 0.5rem;
                 transition: color 0.5s;
+                color: $secondary-color;
 
                 &:hover, &:focus {
                     background: transparent;
-                    color: $secondary-color;
+                    color: $primary-color;
                 }
             }
         }

@@ -485,15 +485,39 @@ table {
 }
 
 /* 16px */
-/* line 16, sass/base-typography/_typography.scss */
+/* line 17, sass/base-typography/_typography.scss */
 body {
   text-rendering: optimizeLegitability;
 }
 
-/* line 34, sass/base-typography/_typography.scss */
-.skip-link, #sitewide-navigation .menu-toggle {
+/* line 25, sass/base-typography/_typography.scss */
+h1 {
+  font-size: 39.0625px;
+  font-size: 2.44141rem;
+}
+
+/* line 30, sass/base-typography/_typography.scss */
+h2 {
+  font-size: 31.25px;
+  font-size: 1.95313rem;
+}
+
+/* line 35, sass/base-typography/_typography.scss */
+h3, .skip-link, #sitewide-navigation .menu-toggle {
   font-size: 25px;
   font-size: 1.5625rem;
+}
+
+/* line 45, sass/base-typography/_typography.scss */
+h5 {
+  font-size: 12.8px;
+  font-size: 0.8rem;
+}
+
+/* line 50, sass/base-typography/_typography.scss */
+h6 {
+  font-size: 10.24px;
+  font-size: 0.64rem;
 }
 
 /* line 1, sass/layout/_layout.scss */
@@ -502,6 +526,8 @@ body {
   max-width: 75em;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 /* line 18, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
 .container:before, .container:after {
@@ -517,12 +543,93 @@ body {
 body {
   border-top: 1.5rem solid #def0eb;
   font-family: "chaparral-pro", Georgia, "Lucida Grande", Serif;
+  line-height: 1.6;
+}
+
+/* line 30, sass/_atoms.scss */
+a {
+  color: #e57032;
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+/* line 35, sass/_atoms.scss */
+a:visited {
+  color: #ffb800;
+}
+/* line 39, sass/_atoms.scss */
+a:hover, a:focus {
+  color: #9d4314;
+}
+
+/* line 48, sass/_atoms.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: HandSlabRegular, Helvetica, Arial, Sans-serif;
+  font-weight: normal;
+  line-height: 1;
+  margin-top: 0;
+}
+/* line 54, sass/_atoms.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
+}
+
+/* line 59, sass/_atoms.scss */
+h2, h3, h4, h5, h6 {
+  font-family: "chaparral-pro", Georgia, "Lucida Grande", Serif;
+}
+
+/* line 63, sass/_atoms.scss */
+h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+/* line 67, sass/_atoms.scss */
+h1 {
+  color: #ffb800;
+  text-align: center;
+}
+@media screen and (min-width: 30em) {
+  /* line 67, sass/_atoms.scss */
+  h1 {
+    text-align: left;
+  }
+}
+
+/* line 93, sass/_atoms.scss */
+h6 {
+  font-weight: bold;
+}
+
+/* line 101, sass/_atoms.scss */
+p {
+  max-width: 45em;
+}
+
+/* line 188, sass/_atoms.scss */
+img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+@media screen and (min-width: 30em) {
+  /* line 188, sass/_atoms.scss */
+  img {
+    width: auto;
+  }
+  /* line 196, sass/_atoms.scss */
+  img.alignright {
+    float: right;
+    margin-top: -1rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+  }
 }
 
 /* line 1, sass/molecules/_site-header.scss */
 #masthead {
   *zoom: 1;
   position: relative;
+  margin-bottom: 3rem;
 }
 /* line 18, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
 #masthead:before, #masthead:after {
@@ -533,8 +640,12 @@ body {
 #masthead:after {
   clear: both;
 }
-/* line 5, sass/molecules/_site-header.scss */
+/* line 6, sass/molecules/_site-header.scss */
 #masthead .site-title {
+  display: block;
+}
+/* line 9, sass/molecules/_site-header.scss */
+#masthead .site-title h1 {
   color: transparent;
   font: 0/0 a;
   text-shadow: none;
@@ -542,26 +653,28 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  display: block;
   width: 210px;
   height: 119px;
   margin: 2rem auto;
 }
-/* line 16, sass/molecules/_site-header.scss */
+/* line 20, sass/molecules/_site-header.scss */
 #masthead .site-title:focus, #masthead .site-title:active {
   outline: thin dotted #999;
 }
 @media screen and (min-width: 65em) {
-  /* line 5, sass/molecules/_site-header.scss */
+  /* line 6, sass/molecules/_site-header.scss */
   #masthead .site-title {
-    margin: 2rem 4rem;
+    margin: 2rem 0;
+    float: left;
+  }
+  /* line 27, sass/molecules/_site-header.scss */
+  #masthead .site-title h1 {
     width: 250px;
     height: 142px;
-    float: left;
   }
 }
 
-/* line 29, sass/molecules/_site-header.scss */
+/* line 35, sass/molecules/_site-header.scss */
 .skip-link {
   text-align: center;
   background: #70300e;
@@ -572,7 +685,7 @@ body {
   transition: background-color 1s;
   padding: 0.75rem 0;
 }
-/* line 40, sass/molecules/_site-header.scss */
+/* line 46, sass/molecules/_site-header.scss */
 .skip-link:focus {
   background: #e57032;
   outline: 4px solid #f0af8d;
@@ -582,10 +695,12 @@ body {
 #sitewide-navigation .menu-primary-menu-container {
   position: absolute;
   top: -1.5rem;
-  width: 100%;
+  width: 110%;
   border-top: 0.5rem solid #eb905f;
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
-/* line 8, sass/molecules/_site-navigation.scss */
+/* line 10, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-primary-menu-container.toggled-on {
   border-bottom: 0.5rem solid #eb905f;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
@@ -596,7 +711,7 @@ body {
     border-top: 0;
     position: relative;
   }
-  /* line 17, sass/molecules/_site-navigation.scss */
+  /* line 19, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-primary-menu-container.toggled-on {
     border-bottom: 0;
     box-shadow: none;
@@ -607,9 +722,11 @@ body {
   #sitewide-navigation .menu-primary-menu-container {
     width: 40em;
     float: right;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
-/* line 29, sass/molecules/_site-navigation.scss */
+/* line 33, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-toggle {
   font-weight: normal;
   text-transform: lowercase;
@@ -629,7 +746,7 @@ body {
   z-index: 9;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
-/* line 49, sass/molecules/_site-navigation.scss */
+/* line 53, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-toggle:hover, #sitewide-navigation .menu-toggle:focus {
   background-color: #ca571a;
   cursor: pointer;
@@ -638,21 +755,21 @@ body {
   border: 3px solid #f6cfba;
   border-top: 0;
 }
-/* line 58, sass/molecules/_site-navigation.scss */
+/* line 62, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-toggle:before {
   content: '☰';
 }
-/* line 62, sass/molecules/_site-navigation.scss */
+/* line 66, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-toggle.toggled-on:before {
   content: '▲';
 }
 @media screen and (min-width: 50em) {
-  /* line 29, sass/molecules/_site-navigation.scss */
+  /* line 33, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-toggle {
     display: none;
   }
 }
-/* line 71, sass/molecules/_site-navigation.scss */
+/* line 75, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .nav-menu {
   border: 0;
   clip: rect(0 0 0 0);
@@ -672,7 +789,7 @@ body {
   width: auto;
   height: auto;
 }
-/* line 74, sass/molecules/_site-navigation.scss */
+/* line 78, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .nav-menu.toggled-on {
   clip: auto;
   clip: rect(auto auto auto auto);
@@ -683,7 +800,7 @@ body {
   height: auto;
 }
 @media screen and (min-width: 50em) {
-  /* line 71, sass/molecules/_site-navigation.scss */
+  /* line 75, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .nav-menu {
     clip: auto;
     clip: rect(auto auto auto auto);
@@ -694,7 +811,7 @@ body {
     height: auto;
   }
 }
-/* line 84, sass/molecules/_site-navigation.scss */
+/* line 88, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .nav-menu,
 #sitewide-navigation .menu-item {
   list-style: none;
@@ -702,47 +819,48 @@ body {
   margin: 0;
   text-align: center;
 }
-/* line 92, sass/molecules/_site-navigation.scss */
+/* line 96, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-item a {
   font-family: HandSlabRegular, Helvetica, Arial, Sans-serif;
   text-transform: uppercase;
   display: block;
   padding: 1rem 0;
   text-decoration: none;
-  border-top: 1px dashed #ffcc00;
+  border-top: 1px dashed #ffb800;
   color: black;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
   transition: background-color 0.25s;
 }
-/* line 103, sass/molecules/_site-navigation.scss */
+/* line 107, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-item a:hover, #sitewide-navigation .menu-item a:focus {
   background: #e57032;
   color: white;
 }
-/* line 109, sass/molecules/_site-navigation.scss */
+/* line 113, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-item:first-child a {
   border-top: 0;
 }
 @media screen and (min-width: 50em) {
-  /* line 91, sass/molecules/_site-navigation.scss */
+  /* line 95, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-item {
     display: inline-block;
     margin: 1.5rem 2em;
   }
-  /* line 117, sass/molecules/_site-navigation.scss */
+  /* line 121, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-item a {
     border-top: 0;
     padding: 0.5rem;
     transition: color 0.5s;
+    color: #e57032;
   }
-  /* line 122, sass/molecules/_site-navigation.scss */
+  /* line 127, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-item a:hover, #sitewide-navigation .menu-item a:focus {
     background: transparent;
-    color: #e57032;
+    color: black;
   }
 }
 @media screen and (min-width: 65em) {
-  /* line 91, sass/molecules/_site-navigation.scss */
+  /* line 95, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-item {
     margin-top: 6rem;
     margin-right: 0.75rem;

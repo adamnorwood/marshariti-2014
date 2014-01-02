@@ -1,27 +1,33 @@
 #masthead {
     @include clearfix;
     position: relative;
+    margin-bottom: 3rem;
 
     .site-title {
-        @include hide-text;
-        background-image: url(images/marsha-riti.gif);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
         display: block;
-        width: 210px;
-        height: 119px;
-        margin: 2rem auto;
+
+        h1 {
+            @include hide-text;
+            background-image: url(images/marsha-riti.gif);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 210px;
+            height: 119px;
+            margin: 2rem auto;
+        }
 
         &:focus, &:active {
             outline: thin dotted #999;
         }
 
         @include media($normal) {
-            margin: 2rem 4rem;
-            width: 250px;
-            height: 142px;
+            margin: 2rem 0;
             float: left;
+            h1 {
+                width: 250px;
+                height: 142px;
+            }
         }
     }
 }
