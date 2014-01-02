@@ -1,0 +1,12 @@
+.social-media-icon {
+    @extend %ss-social-regular;
+    color: $medium-gray;
+
+    &:visited {
+        color: $medium-gray;
+    }
+
+    &:hover, &:focus, &:active {
+        color: $secondary-color;
+    }
+}
