@@ -10,6 +10,12 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php
 
-<?php get_footer(); ?>
+get_header();
+
+marshariti_loop();
+
+get_footer();
+
+?>
