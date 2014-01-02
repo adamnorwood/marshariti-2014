@@ -16,6 +16,8 @@ get_header();
 
 marshariti_loop();
 
+marshariti_pagination();
+
 get_footer();
 
 ?>

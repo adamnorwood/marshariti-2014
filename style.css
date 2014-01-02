@@ -975,6 +975,29 @@ img {
   color: #e57032;
 }
 
+/* line 1, sass/molecules/_pagination.scss */
+.pagination, .pagination li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 7, sass/molecules/_pagination.scss */
+.pagination {
+  margin: 2rem 0;
+}
+
+/* line 11, sass/molecules/_pagination.scss */
+.pagination li {
+  display: inline-block;
+}
+/* line 14, sass/molecules/_pagination.scss */
+.pagination li.pagination-newer-link {
+  padding-left: 1rem;
+  margin-left: 1rem;
+  border-left: 2px solid #eeeeee;
+}
+
 /* The following section is for troubleshooting breakpoints,
    by injecting a bg color for body depending on the current
    display size */

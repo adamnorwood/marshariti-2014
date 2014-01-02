@@ -1,0 +1,19 @@
+.pagination, .pagination li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination {
+    margin: 2rem 0;
+}
+
+.pagination li {
+    display: inline-block;
+
+    &.pagination-newer-link {
+        padding-left: 1rem;
+        margin-left: 1rem;
+        border-left: 2px solid lighten($medium-gray, 40%);
+    }
+}

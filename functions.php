@@ -107,3 +107,17 @@ function marshariti_filter_excerpt_read_more() {
     return '';
 }
 add_filter( 'excerpt_more', 'marshariti_filter_excerpt_read_more' );
+
+/**
+ * Displays pagination (older/newer) controls that are better UI
+ * than the built-in WordPress posts_nav_link function
+ */
+function marshariti_pagination() {
+    global $wp_query;
+    if ( $wp_query->max_num_pages > 1 ) {
+        $olderPostsLink = '<li class="pagination-older-link">' . get_next_posts_link( 'Older posts' ) . '</li>';
+        $newerPostsLink = ( is_paged() ) ? '<li class="pagination-newer-link">' . get_previous_posts_link( 'Newer posts' ) . '</li>' : '';
+
+        echo '<nav><ul class="pagination">' . $olderPostsLink . $newerPostsLink . '</ul></nav>';
+    }
+}
