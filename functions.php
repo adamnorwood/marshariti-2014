@@ -51,3 +51,59 @@ function marshariti_styles_and_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'marshariti_styles_and_scripts' );
+
+
+/**
+ * Abstracts our WordPress loop for custom queries by calling up content for
+ * different posts types using get_template_part based on the CPT slug
+ */
+function marshariti_loop( $args = array() ) {
+
+    if ( count( $args ) === 0 ) {
+        global $wp_query;
+        $query = $wp_query;
+    } else {
+        $query = new WP_Query( $args );
+    }
+
+    // THE LOOP!
+    if ( $query->have_posts() ) :
+
+        // A simple toggle between our two major view types: "archive" vs "single"
+        $viewType = ( is_archive() || is_home() ) ? 'archive' : 'content';
+
+        while ( $query->have_posts() ) : $query->the_post();
+            get_template_part( $viewType, get_post_type() );
+        endwhile;
+
+    else :
+        // In case no content is found but the URL is not 404...
+        get_template_part( 'content', 'none' );
+
+    endif;
+
+}
+
+
+/**
+ * Drops the annoying <p> tags that are autop'ed onto image tags in
+ * pages and posts by default. Should make it easier to have floated
+ * images break out of their paragraph constraints, etc.
+ * @param  string $content The content string being passed along by WordPress
+ * @return string The same content but with images unwrapped from <p>'s
+ */
+function marshariti_filter_ptags_on_images( $content ) {
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+add_filter( 'the_content', 'marshariti_filter_ptags_on_images' );
+
+
+/**
+ * Gets rid of WordPress's default [...] excerpt ender
+ * @return string An empty string
+ */
+function marshariti_filter_excerpt_read_more() {
+    return '';
+}
+add_filter( 'excerpt_more', 'marshariti_filter_excerpt_read_more' );
