@@ -1,3 +1,43 @@
 #sitewide-footer {
-    display: none;
+    @include clearfix;
+    clear: both;
+    border-top: 3px dotted $faint-gray;
+    margin-top: 3rem;
+    padding: 1rem 0;
+
+    .social-media-links {
+        list-style: none;
+        margin: 0; padding: 0;
+        float: left;
+
+        li, a {
+            display: inline-block;
+        }
+
+        a {
+            @extend %type-size-large;
+            padding: 0.5rem 1rem;
+        }
+
+        li:first-child a {
+            padding-left: 0;
+        }
+
+        @include media($normal) {
+            width: 45%;
+        }
+    }
+
+    .copyright {
+        display: inline-block;
+        padding-top: 1rem;
+        color: lighten($medium-gray, 20%);
+
+        @include media($small) {
+            width: 45%;
+            float: right;
+            text-align: right;
+        }
+    }
+
 }

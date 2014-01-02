@@ -484,37 +484,75 @@ table {
   font-style: normal;
 }
 
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+*/
+/* line 24, sass/base-typography/_symbolset.scss */
+.social-media-icon {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 43, sass/base-typography/_symbolset.scss */
+html:hover .social-media-icon {
+  -ms-zoom: 1;
+}
+
+@font-face {
+  font-family: "SSSocial";
+  src: url("fonts/ss-social/ss-social-regular.eot");
+  src: url("fonts/ss-social/ss-social-regular.eot?#iefix") format("embedded-opentype"), url("fonts/ss-social/ss-social-regular.woff") format("woff"), url("fonts/ss-social/ss-social-regular.ttf") format("truetype"), url("fonts/ss-social/ss-social-regular.svg#SSSocialRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 12, sass/base-typography/_ss-social.scss */
+.social-media-icon {
+  font-family: "SSSocial";
+}
+
 /* 16px */
-/* line 17, sass/base-typography/_typography.scss */
+/* line 19, sass/base-typography/_typography.scss */
 body {
   text-rendering: optimizeLegitability;
 }
 
-/* line 25, sass/base-typography/_typography.scss */
+/* line 27, sass/base-typography/_typography.scss */
 h1 {
   font-size: 39.0625px;
   font-size: 2.44141rem;
 }
 
-/* line 30, sass/base-typography/_typography.scss */
+/* line 32, sass/base-typography/_typography.scss */
 h2 {
   font-size: 31.25px;
   font-size: 1.95313rem;
 }
 
-/* line 35, sass/base-typography/_typography.scss */
-h3, .skip-link, #sitewide-navigation .menu-toggle {
+/* line 37, sass/base-typography/_typography.scss */
+h3, .skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .social-media-links a {
   font-size: 25px;
   font-size: 1.5625rem;
 }
 
-/* line 45, sass/base-typography/_typography.scss */
+/* line 47, sass/base-typography/_typography.scss */
 h5 {
   font-size: 12.8px;
   font-size: 0.8rem;
 }
 
-/* line 50, sass/base-typography/_typography.scss */
+/* line 52, sass/base-typography/_typography.scss */
 h6 {
   font-size: 10.24px;
   font-size: 0.64rem;
@@ -869,7 +907,72 @@ img {
 
 /* line 1, sass/molecules/_site-footer.scss */
 #sitewide-footer {
-  display: none;
+  *zoom: 1;
+  clear: both;
+  border-top: 3px dotted #f0f0f0;
+  margin-top: 3rem;
+  padding: 1rem 0;
+}
+/* line 18, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+#sitewide-footer:before, #sitewide-footer:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+#sitewide-footer:after {
+  clear: both;
+}
+/* line 8, sass/molecules/_site-footer.scss */
+#sitewide-footer .social-media-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+/* line 13, sass/molecules/_site-footer.scss */
+#sitewide-footer .social-media-links li, #sitewide-footer .social-media-links a {
+  display: inline-block;
+}
+/* line 17, sass/molecules/_site-footer.scss */
+#sitewide-footer .social-media-links a {
+  padding: 0.5rem 1rem;
+}
+/* line 22, sass/molecules/_site-footer.scss */
+#sitewide-footer .social-media-links li:first-child a {
+  padding-left: 0;
+}
+@media screen and (min-width: 65em) {
+  /* line 8, sass/molecules/_site-footer.scss */
+  #sitewide-footer .social-media-links {
+    width: 45%;
+  }
+}
+/* line 31, sass/molecules/_site-footer.scss */
+#sitewide-footer .copyright {
+  display: inline-block;
+  padding-top: 1rem;
+  color: #bbbbbb;
+}
+@media screen and (min-width: 50em) {
+  /* line 31, sass/molecules/_site-footer.scss */
+  #sitewide-footer .copyright {
+    width: 45%;
+    float: right;
+    text-align: right;
+  }
+}
+
+/* line 1, sass/molecules/_social-media.scss */
+.social-media-icon {
+  color: #888888;
+}
+/* line 5, sass/molecules/_social-media.scss */
+.social-media-icon:visited {
+  color: #888888;
+}
+/* line 9, sass/molecules/_social-media.scss */
+.social-media-icon:hover, .social-media-icon:focus, .social-media-icon:active {
+  color: #e57032;
 }
 
 /* The following section is for troubleshooting breakpoints,
