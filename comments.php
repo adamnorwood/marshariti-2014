@@ -8,6 +8,7 @@
             wp_list_comments( array(
                 'avatar_size' => 100,
                 'short_ping'  => true,
+                'callback'    => 'marshariti_custom_comments_html',
                 'style'       => 'ol',
                 'max_depth'   => 3
             ) );

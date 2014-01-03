@@ -1,0 +1,97 @@
+.comments {
+    margin: 5rem 0 3rem;
+}
+
+.comments ol, .comment {
+    list-style: none;
+}
+
+.comments ol {
+    margin: 0; padding: 0;
+}
+
+.comment {
+    @include clearfix;
+    position: relative;
+    padding: 1.5em 0 0;
+    max-width: 60em;
+    margin-bottom: 2rem;
+}
+
+.comment p {
+    text-indent: 0;
+}
+
+.comment-children .comment {
+    margin-left: 120px;
+    margin-right: 0;
+}
+
+.avatar {
+    float: left;
+    border-radius: 50px;
+    box-shadow: 4px 4px 8px rgba(128,128,128,0.1);
+    margin-right: 30px;
+    margin-bottom: 1rem;
+    width: auto;
+}
+
+.comment-content {
+    clear: both;
+    @include media($smaller) {
+        margin-left: 130px;
+        clear: none;
+    }
+}
+
+.comment a {
+    text-decoration: none;
+}
+
+.comment-author {
+    margin-bottom: 0;
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+.comment-permalink {
+    @extend %type-size-small;
+    display: block;
+    color: $medium-gray;
+    line-height: 1;
+}
+
+.comment-reply-link {
+    color: $medium-gray;
+    opacity: 0.6;
+    position: absolute;
+    top: 0; right: 0;
+
+    &:after {
+        content: '↓';
+        margin-left: 0.25em;
+        opacity: 0.5;
+    }
+
+    &:hover, &:focus {
+        opacity: 1;
+    }
+}
+
+#cancel-comment-reply-link {
+    @extend .button;
+    @extend %type-size-smaller;
+    display: inline-block;
+    margin-left: 5em;
+}
+
+.comment-by-admin {
+    background: lighten(yellow, 45%);
+    padding: 1em 30px;
+    border-radius: 8px;
+}
+
+.comment-by-admin .comment-byline {
+    border-top: 0;
+    padding-top: 0;
+}

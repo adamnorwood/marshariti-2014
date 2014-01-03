@@ -523,37 +523,37 @@ html:hover .social-media-icon {
 }
 
 /* 16px */
-/* line 19, sass/base-typography/_typography.scss */
+/* line 20, sass/base-typography/_typography.scss */
 body {
   text-rendering: optimizeLegitability;
 }
 
-/* line 27, sass/base-typography/_typography.scss */
+/* line 28, sass/base-typography/_typography.scss */
 h1 {
   font-size: 39.0625px;
   font-size: 2.44141rem;
 }
 
-/* line 32, sass/base-typography/_typography.scss */
+/* line 33, sass/base-typography/_typography.scss */
 h2 {
   font-size: 31.25px;
   font-size: 1.95313rem;
 }
 
-/* line 37, sass/base-typography/_typography.scss */
+/* line 38, sass/base-typography/_typography.scss */
 h3, .skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .social-media-links a {
   font-size: 25px;
   font-size: 1.5625rem;
 }
 
-/* line 47, sass/base-typography/_typography.scss */
-h5 {
+/* line 48, sass/base-typography/_typography.scss */
+h5, input[type="submit"], button, .button, #cancel-comment-reply-link, .comment-permalink, .form-allowed-tags {
   font-size: 12.8px;
   font-size: 0.8rem;
 }
 
-/* line 52, sass/base-typography/_typography.scss */
-h6 {
+/* line 53, sass/base-typography/_typography.scss */
+h6, #cancel-comment-reply-link {
   font-size: 10.24px;
   font-size: 0.64rem;
 }
@@ -643,18 +643,41 @@ p {
   max-width: 45em;
 }
 
-/* line 188, sass/_atoms.scss */
+/* line 113, sass/_atoms.scss */
+article {
+  max-width: 50em;
+}
+
+/* line 171, sass/_atoms.scss */
+input[type="submit"], button, .button, #cancel-comment-reply-link {
+  background: #f0af8d;
+  box-shadow: none;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.75em 1em;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Helvetica, Arial, Sans-serif;
+  transition: background-color 0.5s;
+}
+/* line 184, sass/_atoms.scss */
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active, button:hover, button:focus, button:active, .button:hover, #cancel-comment-reply-link:hover, .button:focus, #cancel-comment-reply-link:focus, .button:active, #cancel-comment-reply-link:active {
+  background: #e57032;
+}
+
+/* line 194, sass/_atoms.scss */
 img {
   max-width: 100%;
   height: auto;
   width: 100%;
 }
 @media screen and (min-width: 30em) {
-  /* line 188, sass/_atoms.scss */
+  /* line 194, sass/_atoms.scss */
   img {
     width: auto;
   }
-  /* line 196, sass/_atoms.scss */
+  /* line 202, sass/_atoms.scss */
   img.alignright {
     float: right;
     margin-top: -1rem;
@@ -996,6 +1019,187 @@ img {
   padding-left: 1rem;
   margin-left: 1rem;
   border-left: 2px solid #eeeeee;
+}
+
+/* line 1, sass/molecules/_blog-entry-excerpt.scss */
+.excerpt {
+  margin-bottom: 3rem;
+}
+
+/* line 1, sass/molecules/_comments.scss */
+.comments {
+  margin: 5rem 0 3rem;
+}
+
+/* line 5, sass/molecules/_comments.scss */
+.comments ol, .comment {
+  list-style: none;
+}
+
+/* line 9, sass/molecules/_comments.scss */
+.comments ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 13, sass/molecules/_comments.scss */
+.comment {
+  *zoom: 1;
+  position: relative;
+  padding: 1.5em 0 0;
+  max-width: 60em;
+  margin-bottom: 2rem;
+}
+/* line 18, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+.comment:before, .comment:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+.comment:after {
+  clear: both;
+}
+
+/* line 21, sass/molecules/_comments.scss */
+.comment p {
+  text-indent: 0;
+}
+
+/* line 25, sass/molecules/_comments.scss */
+.comment-children .comment {
+  margin-left: 120px;
+  margin-right: 0;
+}
+
+/* line 30, sass/molecules/_comments.scss */
+.avatar {
+  float: left;
+  border-radius: 50px;
+  box-shadow: 4px 4px 8px rgba(128, 128, 128, 0.1);
+  margin-right: 30px;
+  margin-bottom: 1rem;
+  width: auto;
+}
+
+/* line 39, sass/molecules/_comments.scss */
+.comment-content {
+  clear: both;
+}
+@media screen and (min-width: 30em) {
+  /* line 39, sass/molecules/_comments.scss */
+  .comment-content {
+    margin-left: 130px;
+    clear: none;
+  }
+}
+
+/* line 47, sass/molecules/_comments.scss */
+.comment a {
+  text-decoration: none;
+}
+
+/* line 51, sass/molecules/_comments.scss */
+.comment-author {
+  margin-bottom: 0;
+  margin-right: 1em;
+  font-weight: bold;
+}
+
+/* line 57, sass/molecules/_comments.scss */
+.comment-permalink {
+  display: block;
+  color: #888888;
+  line-height: 1;
+}
+
+/* line 64, sass/molecules/_comments.scss */
+.comment-reply-link {
+  color: #888888;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 70, sass/molecules/_comments.scss */
+.comment-reply-link:after {
+  content: '↓';
+  margin-left: 0.25em;
+  opacity: 0.5;
+}
+/* line 76, sass/molecules/_comments.scss */
+.comment-reply-link:hover, .comment-reply-link:focus {
+  opacity: 1;
+}
+
+/* line 81, sass/molecules/_comments.scss */
+#cancel-comment-reply-link {
+  display: inline-block;
+  margin-left: 5em;
+}
+
+/* line 88, sass/molecules/_comments.scss */
+.comment-by-admin {
+  background: #ffffe5;
+  padding: 1em 30px;
+  border-radius: 8px;
+}
+
+/* line 94, sass/molecules/_comments.scss */
+.comment-by-admin .comment-byline {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* line 1, sass/molecules/_comment-form.scss */
+.comment-respond {
+  margin: 5rem 0;
+}
+
+/* line 5, sass/molecules/_comment-form.scss */
+.comment-respond label {
+  display: block;
+  font-weight: normal;
+  line-height: 1;
+  color: #888888;
+}
+
+/* line 12, sass/molecules/_comment-form.scss */
+.comment-respond .required {
+  color: #ff6666;
+}
+
+/* line 19, sass/molecules/_comment-form.scss */
+.comment-form-author,
+.comment-form-email,
+.comment-form-website,
+.comment-form-comment {
+  width: 99%;
+}
+
+/* line 23, sass/molecules/_comment-form.scss */
+.comment-form-comment #comment {
+  width: 100%;
+}
+
+/* line 27, sass/molecules/_comment-form.scss */
+.form-allowed-tags {
+  background: #f0f0f0;
+  padding: 1.5em;
+  font-weight: 600;
+  color: #888888;
+  width: 56em;
+  max-width: 100%;
+}
+
+/* line 37, sass/molecules/_comment-form.scss */
+.form-allowed-tags code {
+  background: #fff;
+  border: 0;
+  display: block;
+  font-family: Consolas, Inconsolata, Monaco, "Courier New", Monospace;
+  font-weight: normal;
+  margin-top: 0.75em;
+  padding: 0.75em;
 }
 
 /* The following section is for troubleshooting breakpoints,

@@ -1,0 +1,45 @@
+.comment-respond {
+    margin: 5rem 0;
+}
+
+.comment-respond label {
+    display: block;
+    font-weight: normal;
+    line-height: 1;
+    color: $medium-gray;
+}
+
+.comment-respond .required {
+    color: lighten(red, 20%);
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-website,
+.comment-form-comment {
+    width: 99%;
+}
+
+.comment-form-comment #comment {
+    width: 100%;
+}
+
+.form-allowed-tags {
+    @extend %type-size-small;
+    background: $faint-gray;
+    padding: 1.5em;
+    font-weight: 600;
+    color: $medium-gray;
+    width: 56em;
+    max-width: 100%;
+}
+
+.form-allowed-tags code {
+    background: #fff;
+    border: 0;
+    display: block;
+    font-family: $monospace-font-stack;
+    font-weight: normal;
+    margin-top: 0.75em;
+    padding: 0.75em;
+}

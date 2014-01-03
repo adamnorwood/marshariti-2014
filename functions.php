@@ -121,3 +121,49 @@ function marshariti_pagination() {
         echo '<nav><ul class="pagination">' . $olderPostsLink . $newerPostsLink . '</ul></nav>';
     }
 }
+
+function marshariti_custom_comments_html( $comment, $args, $depth ) {
+    $GLOBALS['comment'] = $comment;
+    extract($args, EXTR_SKIP);
+
+    if ( 'div' == $args['style'] ) {
+        $tag = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag = 'li';
+        $add_below = 'div-comment';
+    }
+
+       $commentID        = $comment->comment_ID;
+       $commentClass     = comment_class( empty( $args['has_children'] ) ? '' : 'parent', null, null, false );
+       $commentDate      = get_comment_date();
+       $commentDatetime  = get_comment_date('c');
+       $commentTime      = get_comment_time();
+       $avatar           = get_avatar( $comment, $args['avatar_size'] );
+       $author           = get_comment_author_link( $comment );
+       $commentText      = get_comment_text();
+       $commentText      = ( $comment->comment_approved == '0' ) ?
+                           '<p><strong><em class="comment-awaiting-moderation">Your comment is awaiting moderation.</em></strong></p>' . $commentText :
+                           $commentText;
+       $commentReplyLink = get_comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
+
+    echo <<< END
+
+    <{$tag} {$commentClass} id="comment-{$commentID}">
+        <div class="comment-meta">
+            <span class="comment-byline">
+                {$avatar}
+                <span class="comment-author">{$author}</span>
+                <a href="#comment-{$commentID}" class="comment-permalink"><time class="pubdate" datetime="{$commentDatetime}">{$commentDate}</time></a>
+            </span>
+        </div>
+        <div class="comment-content">
+            {$commentText}
+        </div>
+        <div class="comment-reply">
+            {$commentReplyLink}
+        </div>
+
+END;
+}
+add_filter('get_comment_text', 'wpautop', 30);
