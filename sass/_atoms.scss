@@ -180,6 +180,7 @@ input[type="submit"], button, .button {
     text-transform: uppercase;
     font-family: $sans-font-stack;
     transition: background-color 0.5s;
+    box-shadow: 2px 2px 4px rgba(128,128,128,0.1);
 
     &:hover, &:focus, &:active {
         background: $secondary-color;
@@ -205,5 +206,17 @@ img {
             margin-left: 3rem;
             margin-bottom: 2rem;
         }
+
+        &.alignleft {
+            float: left;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        &.aligncenter {
+            display: block;
+            margin: 0 auto;
+        }
+
     }
 }

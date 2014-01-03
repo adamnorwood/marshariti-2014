@@ -1,0 +1,40 @@
+.entry {
+    @include clearfix;
+    clear: both;
+    border-bottom: 1px solid $faint-gray;
+    padding-bottom: 3rem;
+    margin-bottom: 1rem;
+
+    .content {
+        img {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .footer {
+        @extend %type-size-small;
+        font-family: $sans-font-stack;
+        clear: both;
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        time {
+            font-weight: 600;
+        }
+    }
+}
+
+.tags-list {
+    @extend %collapsed-list;
+
+    a {
+        text-decoration: none;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+    }
+}

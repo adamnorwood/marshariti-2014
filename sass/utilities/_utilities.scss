@@ -5,3 +5,9 @@
 *, *:before, *:after {
     @include box-sizing(border-box);
 }
+
+// Collapse ol and ul lists consistently
+%collapsed-list {
+    list-style: none;
+    margin: 0; padding: 0;
+}

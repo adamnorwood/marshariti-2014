@@ -7,15 +7,11 @@
     </div>
     <footer class="footer">
         <div class="meta">
-            <time class="pubdate updated" datetime="<?= get_the_date('c'); ?>"><strong>Updated</strong> <?= get_the_date(); ?></time>
-            <div class="categories">
-                <span class="visuallyhidden">Posted under:</span>
-                <ul><?php the_category(); ?></ul>
-            </div>
+            <time class="pubdate updated" datetime="<?= get_the_date('c'); ?>">Posted on <?= get_the_date(); ?></time>
 
             <div class="tags">
                 <span class="visuallyhidden">Tags:</span>
-                <ul><?php the_tags(); ?></ul>
+                <ul class="tags-list"><?php the_tags('This post was tagged: ', '<span>,</span> '); ?></ul>
             </div>
         </div>
     </footer>

@@ -1,3 +1,26 @@
 .excerpt {
     margin-bottom: 3rem;
+
+    @include media($normal) {
+        width: 45%;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 5%;
+        padding-right: 2%;
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    .header time {
+        @extend %type-size-small;
+        font-family: $sans-font-stack;
+        color: $medium-gray;
+    }
+}
+
+.read-more {
+    font-style: italic;
+    text-decoration: none;
 }

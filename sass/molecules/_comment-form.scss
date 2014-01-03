@@ -1,5 +1,17 @@
 .comment-respond {
-    margin: 5rem 0;
+    margin: 3rem 0;
+}
+
+.comment-respond h3 {
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.comment-notes {
+    @extend %type-size-small;
+    color: $medium-gray;
+    font-style: italic;
+    margin-bottom: 2rem;
 }
 
 .comment-respond label {

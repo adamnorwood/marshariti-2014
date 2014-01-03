@@ -476,6 +476,13 @@ table {
   box-sizing: border-box;
 }
 
+/* line 10, sass/utilities/_utilities.scss */
+.tags-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: 'HandSlabRegular';
   src: url("fonts/handslab/handslab-regular-webfont.eot");
@@ -547,7 +554,7 @@ h3, .skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .social-medi
 }
 
 /* line 48, sass/base-typography/_typography.scss */
-h5, input[type="submit"], button, .button, #cancel-comment-reply-link, .comment-permalink, .form-allowed-tags {
+h5, input[type="submit"], button, .button, #cancel-comment-reply-link, .entry .footer, .excerpt .header time, .comment-permalink, .comment-notes, .form-allowed-tags {
   font-size: 12.8px;
   font-size: 0.8rem;
 }
@@ -660,29 +667,41 @@ input[type="submit"], button, .button, #cancel-comment-reply-link {
   text-transform: uppercase;
   font-family: Helvetica, Arial, Sans-serif;
   transition: background-color 0.5s;
+  box-shadow: 2px 2px 4px rgba(128, 128, 128, 0.1);
 }
-/* line 184, sass/_atoms.scss */
+/* line 185, sass/_atoms.scss */
 input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active, button:hover, button:focus, button:active, .button:hover, #cancel-comment-reply-link:hover, .button:focus, #cancel-comment-reply-link:focus, .button:active, #cancel-comment-reply-link:active {
   background: #e57032;
 }
 
-/* line 194, sass/_atoms.scss */
+/* line 195, sass/_atoms.scss */
 img {
   max-width: 100%;
   height: auto;
   width: 100%;
 }
 @media screen and (min-width: 30em) {
-  /* line 194, sass/_atoms.scss */
+  /* line 195, sass/_atoms.scss */
   img {
     width: auto;
   }
-  /* line 202, sass/_atoms.scss */
+  /* line 203, sass/_atoms.scss */
   img.alignright {
     float: right;
     margin-top: -1rem;
     margin-left: 3rem;
     margin-bottom: 2rem;
+  }
+  /* line 210, sass/_atoms.scss */
+  img.alignleft {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+  }
+  /* line 216, sass/_atoms.scss */
+  img.aligncenter {
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -1021,14 +1040,84 @@ img {
   border-left: 2px solid #eeeeee;
 }
 
+/* line 1, sass/molecules/_blog-entry.scss */
+.entry {
+  *zoom: 1;
+  clear: both;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+/* line 18, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+.entry:before, .entry:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+.entry:after {
+  clear: both;
+}
+/* line 9, sass/molecules/_blog-entry.scss */
+.entry .content img {
+  margin-bottom: 1rem;
+}
+/* line 14, sass/molecules/_blog-entry.scss */
+.entry .footer {
+  font-family: Helvetica, Arial, Sans-serif;
+  clear: both;
+  opacity: 0.5;
+}
+/* line 20, sass/molecules/_blog-entry.scss */
+.entry .footer:hover {
+  opacity: 1;
+}
+/* line 24, sass/molecules/_blog-entry.scss */
+.entry .footer time {
+  font-weight: 600;
+}
+
+/* line 33, sass/molecules/_blog-entry.scss */
+.tags-list a {
+  text-decoration: none;
+}
+/* line 36, sass/molecules/_blog-entry.scss */
+.tags-list a:hover, .tags-list a:focus {
+  text-decoration: underline;
+}
+
 /* line 1, sass/molecules/_blog-entry-excerpt.scss */
 .excerpt {
   margin-bottom: 3rem;
 }
+@media screen and (min-width: 65em) {
+  /* line 1, sass/molecules/_blog-entry-excerpt.scss */
+  .excerpt {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5%;
+    padding-right: 2%;
+  }
+}
+/* line 12, sass/molecules/_blog-entry-excerpt.scss */
+.excerpt h2 {
+  margin-bottom: 0;
+}
+/* line 16, sass/molecules/_blog-entry-excerpt.scss */
+.excerpt .header time {
+  font-family: Helvetica, Arial, Sans-serif;
+  color: #888888;
+}
+
+/* line 23, sass/molecules/_blog-entry-excerpt.scss */
+.read-more {
+  font-style: italic;
+  text-decoration: none;
+}
 
 /* line 1, sass/molecules/_comments.scss */
 .comments {
-  margin: 5rem 0 3rem;
+  margin: 2rem 0 3rem;
 }
 
 /* line 5, sass/molecules/_comments.scss */
@@ -1152,10 +1241,23 @@ img {
 
 /* line 1, sass/molecules/_comment-form.scss */
 .comment-respond {
-  margin: 5rem 0;
+  margin: 3rem 0;
 }
 
 /* line 5, sass/molecules/_comment-form.scss */
+.comment-respond h3 {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+/* line 10, sass/molecules/_comment-form.scss */
+.comment-notes {
+  color: #888888;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* line 17, sass/molecules/_comment-form.scss */
 .comment-respond label {
   display: block;
   font-weight: normal;
@@ -1163,12 +1265,12 @@ img {
   color: #888888;
 }
 
-/* line 12, sass/molecules/_comment-form.scss */
+/* line 24, sass/molecules/_comment-form.scss */
 .comment-respond .required {
   color: #ff6666;
 }
 
-/* line 19, sass/molecules/_comment-form.scss */
+/* line 31, sass/molecules/_comment-form.scss */
 .comment-form-author,
 .comment-form-email,
 .comment-form-website,
@@ -1176,12 +1278,12 @@ img {
   width: 99%;
 }
 
-/* line 23, sass/molecules/_comment-form.scss */
+/* line 35, sass/molecules/_comment-form.scss */
 .comment-form-comment #comment {
   width: 100%;
 }
 
-/* line 27, sass/molecules/_comment-form.scss */
+/* line 39, sass/molecules/_comment-form.scss */
 .form-allowed-tags {
   background: #f0f0f0;
   padding: 1.5em;
@@ -1191,7 +1293,7 @@ img {
   max-width: 100%;
 }
 
-/* line 37, sass/molecules/_comment-form.scss */
+/* line 49, sass/molecules/_comment-form.scss */
 .form-allowed-tags code {
   background: #fff;
   border: 0;
