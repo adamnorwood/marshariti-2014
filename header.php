@@ -24,8 +24,9 @@
                     <h1><?php bloginfo( 'name' ); ?></h1>
                 </a>
 
+                <a class="visuallyhidden focusable skip-link" href="#main" title="Skip to content">Skip to content</a>
+
                 <nav id="sitewide-navigation" class="navigation main-navigation navbar" role="navigation">
-                    <a class="visuallyhidden focusable skip-link" href="#main" title="Skip to content">Skip to content</a>
                     <h2 class="menu-toggle" tabindex="0"><b class="visuallyhidden">Menu</b></h2>
                     <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
                 </nav>
