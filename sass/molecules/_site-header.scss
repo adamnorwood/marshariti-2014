@@ -1,3 +1,33 @@
+$animation-duration: 30s;
+
+@mixin animation ($name, $duration, $iteration-count) {
+    -moz-animation: $name $duration $iteration-count;
+    -webkit-animation: $name $duration $iteration-count;
+    animation: $name $duration $iteration-count;
+}
+
+@mixin shaky-ani {
+    0%, 33% {
+        background-position: 0% 0%;
+    }
+
+    33.0001%, 66% {
+        background-position: 0% 50.4%;
+    }
+
+    66.0001%, 100% {
+        background-position: 0% 101%;
+    }
+}
+
+@-webkit-keyframes shaky {
+    @include shaky-ani;
+}
+
+@-moz-keyframes shaky {
+    @include shaky-ani;
+}
+
 #masthead {
     @include clearfix;
     position: relative;
@@ -8,13 +38,13 @@
 
         h1 {
             @include hide-text;
-            background-image: url(images/marsha-riti.gif);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
+            @include animation(shaky, 0.5s, infinite);
+            background: transparent url('images/marsha-riti.svg') no-repeat;
+            @include background-size(100%);
             width: 210px;
-            height: 119px;
+            height: 120px;
             margin: 2rem auto;
+            opacity: 0.7;
         }
 
         &:focus, &:active {
@@ -26,7 +56,7 @@
             float: left;
             h1 {
                 width: 250px;
-                height: 142px;
+                height: 150px;
             }
         }
     }
