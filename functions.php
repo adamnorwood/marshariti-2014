@@ -70,7 +70,7 @@ function marshariti_loop( $args = array() ) {
     if ( $query->have_posts() ) :
 
         // A simple toggle between our two major view types: "archive" vs "single"
-        $viewType = ( is_archive() || is_home() ) ? 'archive' : 'content';
+        $viewType = ( is_archive() || is_home() || is_front_page() ) ? 'archive' : 'content';
 
         while ( $query->have_posts() ) : $query->the_post();
             get_template_part( $viewType, get_post_type() );
