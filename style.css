@@ -554,7 +554,7 @@ h3, a.skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .social-med
 }
 
 /* line 48, sass/base-typography/_typography.scss */
-h5, input[type="submit"], button, .button, #cancel-comment-reply-link, .entry .footer, .excerpt .header time, .comment-permalink, .comment-notes, .form-allowed-tags {
+h5, input[type="submit"], button, .button, #cancel-comment-reply-link, .wp-caption-text, .entry .footer, .excerpt .header time, .comment-permalink, .comment-notes, .form-allowed-tags {
   font-size: 12.8px;
   font-size: 0.8rem;
 }
@@ -685,24 +685,34 @@ img {
   img {
     width: auto;
   }
-  /* line 203, sass/_atoms.scss */
-  img.alignright {
-    float: right;
-    margin-top: -1rem;
-    margin-left: 3rem;
-    margin-bottom: 2rem;
-  }
-  /* line 210, sass/_atoms.scss */
-  img.alignleft {
-    float: left;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-  }
-  /* line 216, sass/_atoms.scss */
-  img.aligncenter {
-    display: block;
-    margin: 0 auto;
-  }
+}
+
+/* line 208, sass/_atoms.scss */
+.alignright {
+  float: right;
+  margin-top: -1rem;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* line 215, sass/_atoms.scss */
+.alignleft {
+  float: left;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* line 221, sass/_atoms.scss */
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 226, sass/_atoms.scss */
+.wp-caption-text {
+  font-family: Helvetica, Arial, Sans-serif;
+  margin: 0 0 1em;
+  color: #888888;
 }
 
 @-webkit-keyframes shaky {

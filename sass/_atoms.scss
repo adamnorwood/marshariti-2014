@@ -200,23 +200,32 @@ img {
     @include media($smaller) {
         width: auto;
 
-        &.alignright {
-            float: right;
-            margin-top: -1rem;
-            margin-left: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        &.alignleft {
-            float: left;
-            margin-right: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        &.aligncenter {
-            display: block;
-            margin: 0 auto;
-        }
-
     }
+}
+
+// WordPress Image Classes
+
+.alignright {
+    float: right;
+    margin-top: -1rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto;
+}
+
+.wp-caption-text {
+    @extend %type-size-small;
+    font-family: $sans-font-stack;
+    margin: 0 0 1em;
+    color: $medium-gray;
 }
