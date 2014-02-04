@@ -16,5 +16,5 @@
 
 <figure class="portfolio-image">
     <figcaption><?php the_title(); ?></figcaption>
-    <a href="<?= $fullSizeURL ?>"><?= $image ?></a>
+    <a href="<?= $fullSizeURL ?>" class="portfolio-image-link"><?= $image ?></a>
 </figure>

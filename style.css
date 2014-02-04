@@ -438,7 +438,7 @@ table {
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 /* line 34, sass/utilities/_visuallyhidden.scss */
-.visuallyhidden {
+.visuallyhidden, #home-portfolio .portfolio-image figcaption {
   border: 0;
   clip: rect(0 0 0 0);
   position: absolute;
@@ -449,7 +449,7 @@ table {
   height: 1px;
 }
 /* line 14, sass/utilities/_visuallyhidden.scss */
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+.visuallyhidden.focusable:active, #home-portfolio .portfolio-image figcaption.focusable:active, .visuallyhidden.focusable:focus, #home-portfolio .portfolio-image figcaption.focusable:focus {
   clip: auto;
   position: static;
   overflow: visible;
@@ -1351,6 +1351,79 @@ a.skip-link:focus {
   font-weight: normal;
   margin-top: 0.75em;
   padding: 0.75em;
+}
+
+/* line 1, sass/molecules/_portfolio.scss */
+#home-portfolio {
+  margin-top: -3rem;
+  margin-bottom: 5rem;
+}
+/* line 6, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-thumbnails {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+/* line 33, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/neat/neat/grid/_span-columns.scss */
+#home-portfolio .portfolio-thumbnails:last-child {
+  margin-right: 0;
+}
+/* line 10, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-image {
+  display: block;
+  float: left;
+  margin: 0.6666rem;
+  height: 100px;
+  width: 100px;
+}
+/* line 18, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-image:nth-child(2n) .portfolio-image-link {
+  -webkit-transform: rotate(-1deg);
+  transform: rotate(-1.5deg);
+}
+/* line 23, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-image:nth-child(3n) .portfolio-image-link {
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1.5deg);
+}
+/* line 28, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-image:nth-child(5n) .portfolio-image-link {
+  -webkit-transform: rotate(0.75deg);
+  transform: rotate(0.75deg);
+}
+/* line 37, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-thumbnail {
+  width: 100px;
+  height: 100px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+}
+/* line 43, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-image-link {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+/* line 48, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-image-link.portfolio-current {
+  outline: 3px solid #ffb800;
+}
+/* line 53, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-image-link:hover, #home-portfolio .portfolio-image-link:focus {
+  outline: 3px solid #e57032;
+}
+/* line 58, sass/molecules/_portfolio.scss */
+#home-portfolio #home-portfolio-fullsize {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-top: -6rem;
+  margin-bottom: 5rem;
+}
+/* line 33, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/neat/neat/grid/_span-columns.scss */
+#home-portfolio #home-portfolio-fullsize:last-child {
+  margin-right: 0;
 }
 
 /* The following section is for troubleshooting breakpoints,
