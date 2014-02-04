@@ -54,6 +54,20 @@ add_action( 'wp_enqueue_scripts', 'marshariti_styles_and_scripts' );
 
 
 /**
+ * Removes jQuery Migrate...we shouldn't need it!
+ * @param  [type] $scripts [description]
+ * @return [type]          [description]
+ */
+function marshariti_dequeue_jquery_migrate( &$scripts){
+    if( !is_admin() ) {
+        $scripts->remove( 'jquery');
+        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+    }
+}
+add_filter( 'wp_default_scripts', 'marshariti_dequeue_jquery_migrate' );
+
+
+/**
  * Abstracts our WordPress loop for custom queries by calling up content for
  * different posts types using get_template_part based on the CPT slug
  */
