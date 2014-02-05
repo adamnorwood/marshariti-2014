@@ -28,18 +28,19 @@ body {
 // #ANCHORS -------------------------------------
 
 a {
-    color: $secondary-color;
+    color: $tertiary-color;
     transition-property: color;
     transition-duration: 0.5s;
 
-    &:visited {
-        color: $tertiary-color;
-    }
-
     &:hover, &:focus {
-        color: darken($secondary-color, 20%);
+        color: lighten($secondary-color, 20%);
     }
+}
 
+p, li, dd {
+    a, a:visited {
+        color: $secondary-color;
+    }
 }
 
 

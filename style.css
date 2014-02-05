@@ -438,7 +438,7 @@ table {
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 /* line 34, sass/utilities/_visuallyhidden.scss */
-.visuallyhidden, #home-portfolio .portfolio-image figcaption {
+.visuallyhidden, #home-portfolio .portfolio-image figcaption, .portfolio-control span {
   border: 0;
   clip: rect(0 0 0 0);
   position: absolute;
@@ -449,7 +449,7 @@ table {
   height: 1px;
 }
 /* line 14, sass/utilities/_visuallyhidden.scss */
-.visuallyhidden.focusable:active, #home-portfolio .portfolio-image figcaption.focusable:active, .visuallyhidden.focusable:focus, #home-portfolio .portfolio-image figcaption.focusable:focus {
+.visuallyhidden.focusable:active, #home-portfolio .portfolio-image figcaption.focusable:active, .portfolio-control span.focusable:active, .visuallyhidden.focusable:focus, #home-portfolio .portfolio-image figcaption.focusable:focus, .portfolio-control span.focusable:focus {
   clip: auto;
   position: static;
   overflow: visible;
@@ -536,7 +536,7 @@ body {
 }
 
 /* line 28, sass/base-typography/_typography.scss */
-h1 {
+h1, .portfolio-control {
   font-size: 39.0625px;
   font-size: 2.44141rem;
 }
@@ -593,69 +593,70 @@ body {
 
 /* line 30, sass/_atoms.scss */
 a {
-  color: #e57032;
+  color: #ffb800;
   transition-property: color;
   transition-duration: 0.5s;
 }
 /* line 35, sass/_atoms.scss */
-a:visited {
-  color: #ffb800;
-}
-/* line 39, sass/_atoms.scss */
 a:hover, a:focus {
-  color: #9d4314;
+  color: #f0af8d;
 }
 
-/* line 48, sass/_atoms.scss */
+/* line 41, sass/_atoms.scss */
+p a, p a:visited, li a, li a:visited, dd a, dd a:visited {
+  color: #e57032;
+}
+
+/* line 49, sass/_atoms.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: HandSlabRegular, Helvetica, Arial, Sans-serif;
   font-weight: normal;
   line-height: 1;
   margin-top: 0;
 }
-/* line 54, sass/_atoms.scss */
+/* line 55, sass/_atoms.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration: none;
 }
 
-/* line 59, sass/_atoms.scss */
+/* line 60, sass/_atoms.scss */
 h2, h3, h4, h5, h6 {
   font-family: "chaparral-pro", Georgia, "Lucida Grande", Serif;
 }
 
-/* line 63, sass/_atoms.scss */
+/* line 64, sass/_atoms.scss */
 h4, h5, h6 {
   text-transform: uppercase;
 }
 
-/* line 67, sass/_atoms.scss */
+/* line 68, sass/_atoms.scss */
 h1 {
   color: #ffb800;
   text-align: center;
 }
 @media screen and (min-width: 30em) {
-  /* line 67, sass/_atoms.scss */
+  /* line 68, sass/_atoms.scss */
   h1 {
     text-align: left;
   }
 }
 
-/* line 93, sass/_atoms.scss */
+/* line 94, sass/_atoms.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 101, sass/_atoms.scss */
+/* line 102, sass/_atoms.scss */
 p {
   max-width: 45em;
 }
 
-/* line 113, sass/_atoms.scss */
+/* line 114, sass/_atoms.scss */
 article {
   max-width: 50em;
 }
 
-/* line 171, sass/_atoms.scss */
+/* line 172, sass/_atoms.scss */
 input[type="submit"], button, .button, #cancel-comment-reply-link {
   background: #f0af8d;
   box-shadow: none;
@@ -669,32 +670,32 @@ input[type="submit"], button, .button, #cancel-comment-reply-link {
   transition: background-color 0.5s;
   box-shadow: 2px 2px 4px rgba(128, 128, 128, 0.1);
 }
-/* line 185, sass/_atoms.scss */
+/* line 186, sass/_atoms.scss */
 input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active, button:hover, button:focus, button:active, .button:hover, #cancel-comment-reply-link:hover, .button:focus, #cancel-comment-reply-link:focus, .button:active, #cancel-comment-reply-link:active {
   background: #e57032;
 }
 
-/* line 195, sass/_atoms.scss */
+/* line 196, sass/_atoms.scss */
 img {
   max-width: 100%;
   height: auto;
   width: 100%;
 }
 @media screen and (min-width: 30em) {
-  /* line 195, sass/_atoms.scss */
+  /* line 196, sass/_atoms.scss */
   img {
     width: auto;
   }
 }
 
-/* line 208, sass/_atoms.scss */
+/* line 209, sass/_atoms.scss */
 .alignright {
   margin-top: -1rem;
   margin-bottom: 2rem;
   max-width: 100%;
 }
 @media screen and (min-width: 50em) {
-  /* line 208, sass/_atoms.scss */
+  /* line 209, sass/_atoms.scss */
   .alignright {
     float: right;
     margin-left: 5rem;
@@ -702,25 +703,25 @@ img {
   }
 }
 
-/* line 220, sass/_atoms.scss */
+/* line 221, sass/_atoms.scss */
 .alignleft {
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 50em) {
-  /* line 220, sass/_atoms.scss */
+  /* line 221, sass/_atoms.scss */
   .alignleft {
     float: left;
     margin-right: 2rem;
   }
 }
 
-/* line 229, sass/_atoms.scss */
+/* line 230, sass/_atoms.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 234, sass/_atoms.scss */
+/* line 235, sass/_atoms.scss */
 .wp-caption-text {
   font-family: Helvetica, Arial, Sans-serif;
   margin: 0 0 1em;
@@ -1451,8 +1452,9 @@ a.skip-link:focus {
 #home-portfolio #home-portfolio-fullsize {
   margin-top: -6rem;
   margin-bottom: 3rem;
+  position: relative;
 }
-/* line 70, sass/molecules/_portfolio.scss */
+/* line 71, sass/molecules/_portfolio.scss */
 #home-portfolio #home-portfolio-fullsize img {
   margin: 0 auto;
   display: block;
@@ -1470,6 +1472,70 @@ a.skip-link:focus {
   #home-portfolio #home-portfolio-fullsize:last-child {
     margin-right: 0;
   }
+}
+
+/* line 83, sass/molecules/_portfolio.scss */
+.portfolio-control {
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  text-align: center;
+  border-radius: 2rem;
+  background: #ffb800;
+  color: white;
+  box-shadow: 4px 4px 8px rgba(100, 100, 100, 0.1);
+  opacity: 0.3;
+  transition: opacity 0.5s;
+  top: 2rem;
+}
+@media screen and (min-width: 30em) {
+  /* line 83, sass/molecules/_portfolio.scss */
+  .portfolio-control {
+    top: 15rem;
+  }
+}
+@media screen and (min-width: 75em) {
+  /* line 83, sass/molecules/_portfolio.scss */
+  .portfolio-control {
+    top: 11rem;
+  }
+}
+/* line 107, sass/molecules/_portfolio.scss */
+.portfolio-control:hover, .portfolio-control:focus, .portfolio-control:active {
+  cursor: pointer;
+  color: #fff;
+  opacity: 1;
+}
+
+/* line 118, sass/molecules/_portfolio.scss */
+.portfolio-control-prev {
+  left: 0;
+}
+@media screen and (min-width: 75em) {
+  /* line 118, sass/molecules/_portfolio.scss */
+  .portfolio-control-prev {
+    left: -25px;
+  }
+}
+
+/* line 126, sass/molecules/_portfolio.scss */
+.portfolio-control-next {
+  right: 0;
+}
+@media screen and (min-width: 75em) {
+  /* line 126, sass/molecules/_portfolio.scss */
+  .portfolio-control-next {
+    right: -25px;
+  }
+}
+
+/* line 135, sass/molecules/_portfolio.scss */
+#home-portfolio-fullsize:hover .portfolio-control {
+  opacity: 0.6;
+}
+/* line 140, sass/molecules/_portfolio.scss */
+#home-portfolio-fullsize:hover .portfolio-control:hover, #home-portfolio-fullsize:hover .portfolio-control:focus, #home-portfolio-fullsize:hover .portfolio-control:active {
+  opacity: 1;
 }
 
 /* The following section is for troubleshooting breakpoints,

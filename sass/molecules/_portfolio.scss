@@ -66,6 +66,7 @@
     #home-portfolio-fullsize {
         margin-top: -6rem;
         margin-bottom: 3rem;
+        position: relative;
 
         img {
             margin: 0 auto;
@@ -75,10 +76,69 @@
         @include media($large) {
             @include span-columns(8);
             margin-bottom: 5rem;
+        }
+    }
+}
 
-            img {
-                
-            }
+.portfolio-control {
+    @extend %type-size-largest;
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    text-align: center;
+    border-radius: 2rem;
+    background: $tertiary-color;
+    color: $white;
+    box-shadow: 4px 4px 8px rgba(100,100,100,0.1);
+    opacity: 0.3;
+    transition: opacity 0.5s;
+    top: 2rem;
+
+    @include media($smaller) {
+        top: 15rem;
+    }
+
+    @include media($large) {
+        top: 11rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+        color: #fff;
+        opacity: 1;
+    }
+
+    span {
+        @extend .visuallyhidden;
+    }
+}
+
+.portfolio-control-prev {
+    left: 0;
+
+    @include media($large) {
+        left: -25px;
+    }
+}
+
+.portfolio-control-next {
+    right: 0;
+
+    @include media($large) {
+        right: -25px;
+    }
+}
+
+#home-portfolio-fullsize:hover {
+    .portfolio-control {
+        opacity: 0.6;
+
+        &:hover,
+        &:focus,
+        &:active {
+            opacity: 1;
         }
     }
 }

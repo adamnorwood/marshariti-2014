@@ -58,6 +58,9 @@
         fullSizeImage.attr('src', firstThumbnail.attr('href'));
         firstThumbnail.addClass('portfolio-current');
 
+        var currentSlide = 0;
+        var slideCount = portfolioThumbnails.length;
+
         portfolioThumbnails.on('click', function(e) {
             e.preventDefault();
 
@@ -68,6 +71,40 @@
 
             currentThumbnail.addClass('portfolio-current');
 
+            currentSlide = currentThumbnail.parent().index();
+
         });
+
+        // Create the next/prev buttons
+        var nextButton   = $('<a class="portfolio-control portfolio-control-next" role="button"><span>Next</span> →</a>')
+                            .on('click', function(e) {
+                              e.preventDefault();
+                              updateSlide('next');
+                            });
+
+        var prevButton   = $('<a class="portfolio-control portfolio-control-prev" role="button">← <span>Previous</span></a>')
+                            .on('click', function(e) {
+                              e.preventDefault();
+                              updateSlide('prev');
+                            });
+
+        fullSizeViewer.append(prevButton).append(nextButton);
+
+        function updateSlide(action) {
+            if (action === 'next') {
+                currentSlide = ((currentSlide + 1) < portfolioThumbnails.length) ? currentSlide + 1 : 0;
+            } else if (action === 'prev') {
+                currentSlide = ((currentSlide - 1 < 0)) ? slideCount - 1 : currentSlide - 1;
+            } else {
+                currentSlide = action;
+            }
+
+            var currentThumbnail = portfolioThumbnails.eq(currentSlide);
+            portfolioThumbnails.removeClass('portfolio-current');
+
+            fullSizeImage.attr('src', currentThumbnail.attr('href') );
+
+            currentThumbnail.addClass('portfolio-current');
+        }
     }
 } )( jQuery );
