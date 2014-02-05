@@ -548,7 +548,7 @@ h2 {
 }
 
 /* line 38, sass/base-typography/_typography.scss */
-h3, a.skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .social-media-links a {
+h3, .home h1, a.skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .social-media-links a {
   font-size: 25px;
   font-size: 1.5625rem;
 }
@@ -646,17 +646,31 @@ h6 {
   font-weight: bold;
 }
 
-/* line 102, sass/_atoms.scss */
+/* line 99, sass/_atoms.scss */
+.home h1 {
+  color: #def0eb;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 50em) {
+  /* line 99, sass/_atoms.scss */
+  .home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+/* line 114, sass/_atoms.scss */
 p {
   max-width: 45em;
 }
 
-/* line 114, sass/_atoms.scss */
+/* line 126, sass/_atoms.scss */
 article {
   max-width: 50em;
 }
 
-/* line 172, sass/_atoms.scss */
+/* line 184, sass/_atoms.scss */
 input[type="submit"], button, .button, #cancel-comment-reply-link {
   background: #f0af8d;
   box-shadow: none;
@@ -670,32 +684,32 @@ input[type="submit"], button, .button, #cancel-comment-reply-link {
   transition: background-color 0.5s;
   box-shadow: 2px 2px 4px rgba(128, 128, 128, 0.1);
 }
-/* line 186, sass/_atoms.scss */
+/* line 198, sass/_atoms.scss */
 input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active, button:hover, button:focus, button:active, .button:hover, #cancel-comment-reply-link:hover, .button:focus, #cancel-comment-reply-link:focus, .button:active, #cancel-comment-reply-link:active {
   background: #e57032;
 }
 
-/* line 196, sass/_atoms.scss */
+/* line 208, sass/_atoms.scss */
 img {
   max-width: 100%;
   height: auto;
   width: 100%;
 }
 @media screen and (min-width: 30em) {
-  /* line 196, sass/_atoms.scss */
+  /* line 208, sass/_atoms.scss */
   img {
     width: auto;
   }
 }
 
-/* line 209, sass/_atoms.scss */
+/* line 221, sass/_atoms.scss */
 .alignright {
   margin-top: -1rem;
   margin-bottom: 2rem;
   max-width: 100%;
 }
 @media screen and (min-width: 50em) {
-  /* line 209, sass/_atoms.scss */
+  /* line 221, sass/_atoms.scss */
   .alignright {
     float: right;
     margin-left: 5rem;
@@ -703,25 +717,25 @@ img {
   }
 }
 
-/* line 221, sass/_atoms.scss */
+/* line 233, sass/_atoms.scss */
 .alignleft {
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 50em) {
-  /* line 221, sass/_atoms.scss */
+  /* line 233, sass/_atoms.scss */
   .alignleft {
     float: left;
     margin-right: 2rem;
   }
 }
 
-/* line 230, sass/_atoms.scss */
+/* line 242, sass/_atoms.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 235, sass/_atoms.scss */
+/* line 247, sass/_atoms.scss */
 .wp-caption-text {
   font-family: Helvetica, Arial, Sans-serif;
   margin: 0 0 1em;
@@ -1108,7 +1122,7 @@ a.skip-link:focus {
 .entry {
   *zoom: 1;
   clear: both;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #def0eb;
   padding-bottom: 3rem;
   margin-bottom: 1rem;
 }

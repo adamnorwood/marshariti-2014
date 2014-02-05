@@ -7,6 +7,7 @@
 </section>
 
 <section id="home-blog-archive" class="blog archive">
+    <h1 class="title">From the Blog</h1>
     <?php marshariti_loop( array( 'posts_per_page' => 4 ) ); ?>
     <a href="/blog/">More in the Blog archive!</a>
 </section>

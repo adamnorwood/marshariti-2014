@@ -96,6 +96,18 @@ h6 {
     font-weight: bold;
 }
 
+.home h1 {
+    color: $pale-color;
+    @extend %type-size-large;
+    text-align: left;
+    margin-bottom: 2rem;
+
+    @include media($small) {
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+    }
+}
+
 
 // #TEXT BLOCKS ---------------------------------
 
