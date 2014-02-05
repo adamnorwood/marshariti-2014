@@ -109,9 +109,34 @@ function marshariti_loop( $args = array() ) {
 function marshariti_filter_ptags_on_images( $content ) {
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
-
 add_filter( 'the_content', 'marshariti_filter_ptags_on_images' );
 
+
+function marshariti_custom_img_caption_shortcode( $empty, $attr, $content ) {
+
+    $attr = shortcode_atts( array(
+        'id'      => '',
+        'align'   => 'alignnone',
+        'width'   => '',
+        'caption' => ''
+    ), $attr );
+
+    if ( 1 > (int) $attr['width'] || empty( $attr['caption'] ) ) {
+        return '';
+    }
+
+    if ( $attr['id'] ) {
+        $attr['id'] = 'id="' . esc_attr( $attr['id'] ) . '" ';
+    }
+
+    return '<div ' . $attr['id']
+    . 'class="wp-caption ' . esc_attr( $attr['align'] ) . '">'
+    . do_shortcode( $content )
+    . '<p class="wp-caption-text">' . $attr['caption'] . '</p>'
+    . '</div>';
+
+}
+add_filter( 'img_caption_shortcode', 'marshariti_custom_img_caption_shortcode', 10, 3 );
 
 /**
  * Gets rid of WordPress's default [...] excerpt ender

@@ -689,26 +689,38 @@ img {
 
 /* line 208, sass/_atoms.scss */
 .alignright {
-  float: right;
   margin-top: -1rem;
-  margin-left: 3rem;
   margin-bottom: 2rem;
+  max-width: 100%;
+}
+@media screen and (min-width: 50em) {
+  /* line 208, sass/_atoms.scss */
+  .alignright {
+    float: right;
+    margin-left: 5rem;
+    max-width: 50%;
+  }
 }
 
-/* line 215, sass/_atoms.scss */
+/* line 220, sass/_atoms.scss */
 .alignleft {
-  float: left;
-  margin-right: 2rem;
   margin-bottom: 2rem;
 }
+@media screen and (min-width: 50em) {
+  /* line 220, sass/_atoms.scss */
+  .alignleft {
+    float: left;
+    margin-right: 2rem;
+  }
+}
 
-/* line 221, sass/_atoms.scss */
+/* line 229, sass/_atoms.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 226, sass/_atoms.scss */
+/* line 234, sass/_atoms.scss */
 .wp-caption-text {
   font-family: Helvetica, Arial, Sans-serif;
   margin: 0 0 1em;
@@ -779,7 +791,7 @@ img {
   background: transparent url("images/marsha-riti.svg") no-repeat;
   background-size: 100%;
   width: 210px;
-  height: 120px;
+  height: 124px;
   margin: 2rem auto;
   opacity: 0.7;
 }
@@ -850,8 +862,10 @@ a.skip-link:focus {
   #sitewide-navigation .menu-primary-menu-container {
     border-top: 0;
     position: relative;
+    width: 100%;
+    margin: 0;
   }
-  /* line 19, sass/molecules/_site-navigation.scss */
+  /* line 21, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-primary-menu-container.toggled-on {
     border-bottom: 0;
     box-shadow: none;
@@ -866,7 +880,7 @@ a.skip-link:focus {
     margin-right: 0;
   }
 }
-/* line 33, sass/molecules/_site-navigation.scss */
+/* line 35, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-toggle {
   font-weight: normal;
   text-transform: lowercase;
@@ -886,7 +900,7 @@ a.skip-link:focus {
   z-index: 9;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
-/* line 53, sass/molecules/_site-navigation.scss */
+/* line 55, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-toggle:hover, #sitewide-navigation .menu-toggle:focus {
   background-color: #ca571a;
   cursor: pointer;
@@ -895,21 +909,21 @@ a.skip-link:focus {
   border: 3px solid #f6cfba;
   border-top: 0;
 }
-/* line 62, sass/molecules/_site-navigation.scss */
+/* line 64, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-toggle:before {
   content: '☰';
 }
-/* line 66, sass/molecules/_site-navigation.scss */
+/* line 68, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-toggle.toggled-on:before {
   content: '▲';
 }
 @media screen and (min-width: 50em) {
-  /* line 33, sass/molecules/_site-navigation.scss */
+  /* line 35, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-toggle {
     display: none;
   }
 }
-/* line 75, sass/molecules/_site-navigation.scss */
+/* line 77, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .nav-menu {
   border: 0;
   clip: rect(0 0 0 0);
@@ -929,7 +943,7 @@ a.skip-link:focus {
   width: auto;
   height: auto;
 }
-/* line 78, sass/molecules/_site-navigation.scss */
+/* line 80, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .nav-menu.toggled-on {
   clip: auto;
   clip: rect(auto auto auto auto);
@@ -940,7 +954,7 @@ a.skip-link:focus {
   height: auto;
 }
 @media screen and (min-width: 50em) {
-  /* line 75, sass/molecules/_site-navigation.scss */
+  /* line 77, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .nav-menu {
     clip: auto;
     clip: rect(auto auto auto auto);
@@ -951,7 +965,7 @@ a.skip-link:focus {
     height: auto;
   }
 }
-/* line 88, sass/molecules/_site-navigation.scss */
+/* line 90, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .nav-menu,
 #sitewide-navigation .menu-item {
   list-style: none;
@@ -959,7 +973,7 @@ a.skip-link:focus {
   margin: 0;
   text-align: center;
 }
-/* line 96, sass/molecules/_site-navigation.scss */
+/* line 98, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-item a {
   font-family: HandSlabRegular, Helvetica, Arial, Sans-serif;
   text-transform: uppercase;
@@ -971,36 +985,36 @@ a.skip-link:focus {
   background-color: rgba(255, 255, 255, 0.95);
   transition: background-color 0.25s;
 }
-/* line 107, sass/molecules/_site-navigation.scss */
+/* line 109, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-item a:hover, #sitewide-navigation .menu-item a:focus {
   background: #e57032;
   color: white;
 }
-/* line 113, sass/molecules/_site-navigation.scss */
+/* line 115, sass/molecules/_site-navigation.scss */
 #sitewide-navigation .menu-item:first-child a {
   border-top: 0;
 }
 @media screen and (min-width: 50em) {
-  /* line 95, sass/molecules/_site-navigation.scss */
+  /* line 97, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-item {
     display: inline-block;
     margin: 1.5rem 2em;
   }
-  /* line 121, sass/molecules/_site-navigation.scss */
+  /* line 123, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-item a {
     border-top: 0;
     padding: 0.5rem;
     transition: color 0.5s;
     color: #e57032;
   }
-  /* line 127, sass/molecules/_site-navigation.scss */
+  /* line 129, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-item a:hover, #sitewide-navigation .menu-item a:focus {
     background: transparent;
     color: black;
   }
 }
 @media screen and (min-width: 65em) {
-  /* line 95, sass/molecules/_site-navigation.scss */
+  /* line 97, sass/molecules/_site-navigation.scss */
   #sitewide-navigation .menu-item {
     margin-top: 6rem;
     margin-right: 0.75rem;

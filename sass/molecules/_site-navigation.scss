@@ -15,6 +15,8 @@
         @include media($small) {
             border-top: 0;
             position: relative;
+            width: 100%;
+            margin: 0;
 
             &.toggled-on {
                 border-bottom: 0;

@@ -206,16 +206,24 @@ img {
 // WordPress Image Classes
 
 .alignright {
-    float: right;
     margin-top: -1rem;
-    margin-left: 3rem;
     margin-bottom: 2rem;
+    max-width: 100%;
+
+    @include media($small) {
+        float: right;
+        margin-left: 5rem;
+        max-width: 50%;
+    }
 }
 
 .alignleft {
-    float: left;
-    margin-right: 2rem;
     margin-bottom: 2rem;
+
+    @include media($small) {
+        float: left;
+        margin-right: 2rem;
+    }
 }
 
 .aligncenter {
