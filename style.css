@@ -1355,21 +1355,42 @@ a.skip-link:focus {
 
 /* line 1, sass/molecules/_portfolio.scss */
 #home-portfolio {
-  margin-top: -3rem;
-  margin-bottom: 5rem;
+  *zoom: 1;
+  margin-top: 7rem;
 }
-/* line 6, sass/molecules/_portfolio.scss */
-#home-portfolio .portfolio-thumbnails {
-  display: block;
-  float: left;
-  margin-right: 2.35765%;
-  width: 31.76157%;
+/* line 18, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+#home-portfolio:before, #home-portfolio:after {
+  content: " ";
+  display: table;
 }
-/* line 33, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/neat/neat/grid/_span-columns.scss */
-#home-portfolio .portfolio-thumbnails:last-child {
-  margin-right: 0;
+/* line 23, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+#home-portfolio:after {
+  clear: both;
+}
+@media screen and (min-width: 75em) {
+  /* line 1, sass/molecules/_portfolio.scss */
+  #home-portfolio {
+    margin-top: -3rem;
+  }
 }
 /* line 10, sass/molecules/_portfolio.scss */
+#home-portfolio .portfolio-thumbnails {
+  display: none;
+}
+@media screen and (min-width: 75em) {
+  /* line 10, sass/molecules/_portfolio.scss */
+  #home-portfolio .portfolio-thumbnails {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+  }
+  /* line 33, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/neat/neat/grid/_span-columns.scss */
+  #home-portfolio .portfolio-thumbnails:last-child {
+    margin-right: 0;
+  }
+}
+/* line 18, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image {
   display: block;
   float: left;
@@ -1377,53 +1398,64 @@ a.skip-link:focus {
   height: 100px;
   width: 100px;
 }
-/* line 18, sass/molecules/_portfolio.scss */
+/* line 26, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image:nth-child(2n) .portfolio-image-link {
   -webkit-transform: rotate(-1deg);
   transform: rotate(-1.5deg);
 }
-/* line 23, sass/molecules/_portfolio.scss */
+/* line 31, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image:nth-child(3n) .portfolio-image-link {
   -webkit-transform: rotate(1deg);
   transform: rotate(1.5deg);
 }
-/* line 28, sass/molecules/_portfolio.scss */
+/* line 36, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image:nth-child(5n) .portfolio-image-link {
   -webkit-transform: rotate(0.75deg);
   transform: rotate(0.75deg);
 }
-/* line 37, sass/molecules/_portfolio.scss */
+/* line 45, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-thumbnail {
   width: 100px;
   height: 100px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
 }
-/* line 43, sass/molecules/_portfolio.scss */
+/* line 51, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image-link {
   display: block;
   width: 100px;
   height: 100px;
 }
-/* line 48, sass/molecules/_portfolio.scss */
+/* line 56, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image-link.portfolio-current {
   outline: 3px solid #ffb800;
 }
-/* line 53, sass/molecules/_portfolio.scss */
+/* line 61, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image-link:hover, #home-portfolio .portfolio-image-link:focus {
   outline: 3px solid #e57032;
 }
-/* line 58, sass/molecules/_portfolio.scss */
+/* line 66, sass/molecules/_portfolio.scss */
 #home-portfolio #home-portfolio-fullsize {
-  display: block;
-  float: left;
-  margin-right: 2.35765%;
-  width: 65.88078%;
   margin-top: -6rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
-/* line 33, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/neat/neat/grid/_span-columns.scss */
-#home-portfolio #home-portfolio-fullsize:last-child {
-  margin-right: 0;
+/* line 70, sass/molecules/_portfolio.scss */
+#home-portfolio #home-portfolio-fullsize img {
+  margin: 0 auto;
+  display: block;
+}
+@media screen and (min-width: 75em) {
+  /* line 66, sass/molecules/_portfolio.scss */
+  #home-portfolio #home-portfolio-fullsize {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-bottom: 5rem;
+  }
+  /* line 33, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/neat/neat/grid/_span-columns.scss */
+  #home-portfolio #home-portfolio-fullsize:last-child {
+    margin-right: 0;
+  }
 }
 
 /* The following section is for troubleshooting breakpoints,
