@@ -438,7 +438,7 @@ table {
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 /* line 34, sass/utilities/_visuallyhidden.scss */
-.visuallyhidden, #home-portfolio .portfolio-image figcaption, .portfolio-control span {
+.visuallyhidden, #home-portfolio .portfolio-image figcaption, .portfolio-control span, .post-type-archive-books .read-more span {
   border: 0;
   clip: rect(0 0 0 0);
   position: absolute;
@@ -449,7 +449,7 @@ table {
   height: 1px;
 }
 /* line 14, sass/utilities/_visuallyhidden.scss */
-.visuallyhidden.focusable:active, #home-portfolio .portfolio-image figcaption.focusable:active, .portfolio-control span.focusable:active, .visuallyhidden.focusable:focus, #home-portfolio .portfolio-image figcaption.focusable:focus, .portfolio-control span.focusable:focus {
+.visuallyhidden.focusable:active, #home-portfolio .portfolio-image figcaption.focusable:active, .portfolio-control span.focusable:active, .post-type-archive-books .read-more span.focusable:active, .visuallyhidden.focusable:focus, #home-portfolio .portfolio-image figcaption.focusable:focus, .portfolio-control span.focusable:focus, .post-type-archive-books .read-more span.focusable:focus {
   clip: auto;
   position: static;
   overflow: visible;
@@ -554,7 +554,7 @@ h3, .home h1, a.skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .
 }
 
 /* line 48, sass/base-typography/_typography.scss */
-h5, input[type="submit"], button, .button, #cancel-comment-reply-link, .wp-caption-text, .entry .footer, .excerpt .header time, .comment-permalink, .comment-notes, .form-allowed-tags {
+h5, input[type="submit"], button, .button, #cancel-comment-reply-link, .wp-caption-text, .entry .footer, .excerpt .header time, .comment-permalink, .comment-notes, .form-allowed-tags, .post-type-archive-books .book-meta-author {
   font-size: 12.8px;
   font-size: 0.8rem;
 }
@@ -1550,6 +1550,75 @@ a.skip-link:focus {
 /* line 140, sass/molecules/_portfolio.scss */
 #home-portfolio-fullsize:hover .portfolio-control:hover, #home-portfolio-fullsize:hover .portfolio-control:focus, #home-portfolio-fullsize:hover .portfolio-control:active {
   opacity: 1;
+}
+
+/* line 3, sass/molecules/_books.scss */
+.post-type-archive-books .book {
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 50em) {
+  /* line 3, sass/molecules/_books.scss */
+  .post-type-archive-books .book {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    padding-right: 5rem;
+  }
+}
+/* line 14, sass/molecules/_books.scss */
+.post-type-archive-books .book-thumbnail {
+  margin-bottom: 2rem;
+  box-shadow: -8px 8px 8px rgba(128, 128, 128, 0.2);
+  -webkit-transform: rotate(-1.5deg);
+  border: 1px solid #def0eb;
+}
+@media screen and (min-width: 30em) {
+  /* line 14, sass/molecules/_books.scss */
+  .post-type-archive-books .book-thumbnail {
+    max-width: 250px;
+    max-height: 350px;
+  }
+}
+@media screen and (min-width: 65em) {
+  /* line 14, sass/molecules/_books.scss */
+  .post-type-archive-books .book-thumbnail {
+    float: left;
+    margin-right: 2rem;
+  }
+}
+/* line 31, sass/molecules/_books.scss */
+.post-type-archive-books a {
+  text-decoration: none;
+}
+/* line 35, sass/molecules/_books.scss */
+.post-type-archive-books .book-meta-author {
+  color: #888888;
+  font-family: Helvetica, Arial, Sans-serif;
+}
+/* line 41, sass/molecules/_books.scss */
+.post-type-archive-books .book-meta-stores {
+  color: #888888;
+  clear: both;
+}
+/* line 46, sass/molecules/_books.scss */
+.post-type-archive-books .book-meta-stores-list {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin-bottom: 3rem;
+}
+/* line 53, sass/molecules/_books.scss */
+.post-type-archive-books .book-meta-stores-list .book-meta-store {
+  display: inline;
+  margin-left: 0.5rem;
+}
+/* line 57, sass/molecules/_books.scss */
+.post-type-archive-books .book-meta-stores-list .book-meta-store a {
+  color: #fff;
+}
+/* line 69, sass/molecules/_books.scss */
+.post-type-archive-books .read-more:after {
+  content: '…';
 }
 
 /* The following section is for troubleshooting breakpoints,
