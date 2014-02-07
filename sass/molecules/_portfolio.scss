@@ -9,6 +9,7 @@
 
     .portfolio-thumbnails {
         display: none;
+        margin-bottom: 5rem;
 
         @include media($large) {
             @include span-columns(4);
@@ -21,6 +22,7 @@
         margin: 0.6666rem;
         height: 100px;
         width: 100px;
+        box-shadow: 5px 5px 8px rgba(0,0,0,0.1);
     }
 
     .portfolio-image:nth-child(2n) .portfolio-image-link {
@@ -45,21 +47,23 @@
     .portfolio-thumbnail {
         width: 100px;
         height: 100px;
-        box-shadow: 5px 5px 8px rgba(0,0,0,0.1);
     }
 
     .portfolio-image-link {
+        overflow: hidden;
         display: block;
         width: 100px;
         height: 100px;
+        border: 3px solid transparent;
+
 
         &.portfolio-current {
-            outline: 3px solid $tertiary-color;
+            border: 3px solid $tertiary-color;
         }
 
         &:hover,
         &:focus {
-            outline: 3px solid $secondary-color;
+            border: 3px solid $secondary-color;
         }
     }
 

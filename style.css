@@ -1405,6 +1405,7 @@ a.skip-link:focus {
 /* line 10, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-thumbnails {
   display: none;
+  margin-bottom: 5rem;
 }
 @media screen and (min-width: 75em) {
   /* line 10, sass/molecules/_portfolio.scss */
@@ -1419,62 +1420,64 @@ a.skip-link:focus {
     margin-right: 0;
   }
 }
-/* line 18, sass/molecules/_portfolio.scss */
+/* line 19, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image {
   display: block;
   float: left;
   margin: 0.6666rem;
   height: 100px;
   width: 100px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
 }
-/* line 26, sass/molecules/_portfolio.scss */
+/* line 28, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image:nth-child(2n) .portfolio-image-link {
   -webkit-transform: rotate(-1deg);
   transform: rotate(-1.5deg);
 }
-/* line 31, sass/molecules/_portfolio.scss */
+/* line 33, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image:nth-child(3n) .portfolio-image-link {
   -webkit-transform: rotate(1deg);
   transform: rotate(1.5deg);
 }
-/* line 36, sass/molecules/_portfolio.scss */
+/* line 38, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image:nth-child(5n) .portfolio-image-link {
   -webkit-transform: rotate(0.75deg);
   transform: rotate(0.75deg);
 }
-/* line 45, sass/molecules/_portfolio.scss */
+/* line 47, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-thumbnail {
   width: 100px;
   height: 100px;
-  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
 }
-/* line 51, sass/molecules/_portfolio.scss */
+/* line 52, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image-link {
+  overflow: hidden;
   display: block;
   width: 100px;
   height: 100px;
+  border: 3px solid transparent;
 }
-/* line 56, sass/molecules/_portfolio.scss */
+/* line 60, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image-link.portfolio-current {
-  outline: 3px solid #ffb800;
+  border: 3px solid #ffb800;
 }
-/* line 61, sass/molecules/_portfolio.scss */
+/* line 65, sass/molecules/_portfolio.scss */
 #home-portfolio .portfolio-image-link:hover, #home-portfolio .portfolio-image-link:focus {
-  outline: 3px solid #e57032;
+  border: 3px solid #e57032;
 }
-/* line 66, sass/molecules/_portfolio.scss */
+/* line 70, sass/molecules/_portfolio.scss */
 #home-portfolio #home-portfolio-fullsize {
   margin-top: -6rem;
   margin-bottom: 3rem;
   position: relative;
 }
-/* line 71, sass/molecules/_portfolio.scss */
+/* line 75, sass/molecules/_portfolio.scss */
 #home-portfolio #home-portfolio-fullsize img {
   margin: 0 auto;
   display: block;
 }
 @media screen and (min-width: 75em) {
-  /* line 66, sass/molecules/_portfolio.scss */
+  /* line 70, sass/molecules/_portfolio.scss */
   #home-portfolio #home-portfolio-fullsize {
     display: block;
     float: left;
@@ -1488,7 +1491,7 @@ a.skip-link:focus {
   }
 }
 
-/* line 83, sass/molecules/_portfolio.scss */
+/* line 87, sass/molecules/_portfolio.scss */
 .portfolio-control {
   position: absolute;
   height: 4rem;
@@ -1503,51 +1506,51 @@ a.skip-link:focus {
   top: 2rem;
 }
 @media screen and (min-width: 30em) {
-  /* line 83, sass/molecules/_portfolio.scss */
+  /* line 87, sass/molecules/_portfolio.scss */
   .portfolio-control {
     top: 15rem;
   }
 }
 @media screen and (min-width: 75em) {
-  /* line 83, sass/molecules/_portfolio.scss */
+  /* line 87, sass/molecules/_portfolio.scss */
   .portfolio-control {
     top: 11rem;
   }
 }
-/* line 107, sass/molecules/_portfolio.scss */
+/* line 111, sass/molecules/_portfolio.scss */
 .portfolio-control:hover, .portfolio-control:focus, .portfolio-control:active {
   cursor: pointer;
   color: #fff;
   opacity: 1;
 }
 
-/* line 118, sass/molecules/_portfolio.scss */
+/* line 122, sass/molecules/_portfolio.scss */
 .portfolio-control-prev {
   left: 0;
 }
 @media screen and (min-width: 75em) {
-  /* line 118, sass/molecules/_portfolio.scss */
+  /* line 122, sass/molecules/_portfolio.scss */
   .portfolio-control-prev {
     left: -25px;
   }
 }
 
-/* line 126, sass/molecules/_portfolio.scss */
+/* line 130, sass/molecules/_portfolio.scss */
 .portfolio-control-next {
   right: 0;
 }
 @media screen and (min-width: 75em) {
-  /* line 126, sass/molecules/_portfolio.scss */
+  /* line 130, sass/molecules/_portfolio.scss */
   .portfolio-control-next {
     right: -25px;
   }
 }
 
-/* line 135, sass/molecules/_portfolio.scss */
+/* line 139, sass/molecules/_portfolio.scss */
 #home-portfolio-fullsize:hover .portfolio-control {
   opacity: 0.6;
 }
-/* line 140, sass/molecules/_portfolio.scss */
+/* line 144, sass/molecules/_portfolio.scss */
 #home-portfolio-fullsize:hover .portfolio-control:hover, #home-portfolio-fullsize:hover .portfolio-control:focus, #home-portfolio-fullsize:hover .portfolio-control:active {
   opacity: 1;
 }
