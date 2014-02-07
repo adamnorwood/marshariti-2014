@@ -22,6 +22,8 @@
 
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+        <?php wp_head(); ?>
+
         <script type="text/javascript">
             /* GOOGLE Analytics */
             if (document.domain.indexOf('.dev') < 0) {
@@ -34,8 +36,6 @@
                 ga('send', 'pageview');
             }
         </script>
-
-        <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
         <div class="container">
