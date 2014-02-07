@@ -13,6 +13,13 @@
 
         <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo( 'name' ); ?></title>
 
+        <?php if ( is_front_page() ) : ?>
+
+        <meta name="description" content="<?= get_bloginfo('description') ?>" />
+        <meta name="keywords"    content="marsha riti, art, childrens books, illustration, kids, fun, watercolor, austin, texas" />
+
+        <?php endif; ?>
+
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
         <script type="text/javascript">
