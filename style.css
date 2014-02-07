@@ -548,7 +548,7 @@ h2 {
 }
 
 /* line 38, sass/base-typography/_typography.scss */
-h3, .home h1, .post-type-archive-books h1, a.skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .social-media-links a {
+h3, .title, a.skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .social-media-links a {
   font-size: 25px;
   font-size: 1.5625rem;
 }
@@ -647,14 +647,14 @@ h6 {
 }
 
 /* line 99, sass/_atoms.scss */
-.home h1, .post-type-archive-books h1 {
+.title {
   color: #98d0c0;
   text-align: left;
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 50em) {
   /* line 99, sass/_atoms.scss */
-  .home h1, .post-type-archive-books h1 {
+  .title {
     font-size: 2.5rem;
     margin-bottom: 4rem;
   }

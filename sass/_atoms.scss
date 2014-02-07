@@ -96,7 +96,7 @@ h6 {
     font-weight: bold;
 }
 
-.home h1, .post-type-archive-books h1 {
+.title {
     color: darken($pale-color, 20%);
     @extend %type-size-large;
     text-align: left;

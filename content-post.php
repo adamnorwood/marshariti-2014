@@ -1,7 +1,4 @@
 <article class="entry full-entry">
-    <header class="header">
-        <h1 class="title"><?php the_title(); ?></h1>
-    </header>
     <div class="content">
         <?php the_content(); ?>
     </div>

@@ -1,7 +1,4 @@
 <article class="book">
-    <header>
-        <h1 class="title"><?php the_title(); ?></h1>
-    </header>
 
     <?= wp_get_attachment_image( get_field( 'book-cover-image' ), 'full', 0, array( 'class' => 'book-cover-image' ) ); ?>
 
