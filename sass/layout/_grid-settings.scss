@@ -13,6 +13,7 @@ $max-width: em(1200);
 // Define our breakpoints
 $smallest: new-breakpoint(min-width 20em 1);
 $smaller:  new-breakpoint(min-width 30em 1);
+$smallish: new-breakpoint(min-width 40em 1);
 $small:    new-breakpoint(min-width 50em 4);
 $normal:   new-breakpoint(min-width 65em 12);
 $large:    new-breakpoint(min-width 75em 12);

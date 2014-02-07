@@ -40,11 +40,12 @@
     .book {
         margin-bottom: 5rem;
 
-        @include media($small) {
+        @include media($smallish) {
             display: inline-block;
             width: 50%;
             vertical-align: top;
-            padding-right: 5rem;
+            padding-left: 2rem;
+            padding-right: 3rem;
         }
     }
 

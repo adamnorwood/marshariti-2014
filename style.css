@@ -1597,20 +1597,21 @@ a.skip-link:focus {
 .post-type-archive-books .book {
   margin-bottom: 5rem;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 40em) {
   /* line 40, sass/molecules/_books.scss */
   .post-type-archive-books .book {
     display: inline-block;
     width: 50%;
     vertical-align: top;
-    padding-right: 5rem;
+    padding-left: 2rem;
+    padding-right: 3rem;
   }
 }
-/* line 51, sass/molecules/_books.scss */
+/* line 52, sass/molecules/_books.scss */
 .post-type-archive-books .book-meta-stores {
   clear: both;
 }
-/* line 55, sass/molecules/_books.scss */
+/* line 56, sass/molecules/_books.scss */
 .post-type-archive-books .book-thumbnail {
   margin-bottom: 2rem;
   box-shadow: -8px 8px 8px rgba(128, 128, 128, 0.2);
@@ -1618,29 +1619,29 @@ a.skip-link:focus {
   border: 1px solid #def0eb;
 }
 @media screen and (min-width: 30em) {
-  /* line 55, sass/molecules/_books.scss */
+  /* line 56, sass/molecules/_books.scss */
   .post-type-archive-books .book-thumbnail {
     max-width: 250px;
     max-height: 350px;
   }
 }
 @media screen and (min-width: 65em) {
-  /* line 55, sass/molecules/_books.scss */
+  /* line 56, sass/molecules/_books.scss */
   .post-type-archive-books .book-thumbnail {
     float: left;
     margin-right: 2rem;
   }
 }
-/* line 72, sass/molecules/_books.scss */
+/* line 73, sass/molecules/_books.scss */
 .post-type-archive-books a {
   text-decoration: none;
 }
-/* line 81, sass/molecules/_books.scss */
+/* line 82, sass/molecules/_books.scss */
 .post-type-archive-books .read-more:after {
   content: '…';
 }
 
-/* line 90, sass/molecules/_books.scss */
+/* line 91, sass/molecules/_books.scss */
 .single-books .book {
   *zoom: 1;
   max-width: 100%;
@@ -1655,7 +1656,7 @@ a.skip-link:focus {
 .single-books .book:after {
   clear: both;
 }
-/* line 96, sass/molecules/_books.scss */
+/* line 97, sass/molecules/_books.scss */
 .single-books .book-cover-image {
   width: 95%;
   height: auto;
@@ -1664,26 +1665,26 @@ a.skip-link:focus {
   border: 1px solid #def0eb;
 }
 @media screen and (min-width: 30em) {
-  /* line 96, sass/molecules/_books.scss */
+  /* line 97, sass/molecules/_books.scss */
   .single-books .book-cover-image {
     float: left;
     width: 250px;
   }
 }
 @media screen and (min-width: 50em) {
-  /* line 96, sass/molecules/_books.scss */
+  /* line 97, sass/molecules/_books.scss */
   .single-books .book-cover-image {
     width: 350px;
   }
 }
 @media screen and (min-width: 30em) {
-  /* line 113, sass/molecules/_books.scss */
+  /* line 114, sass/molecules/_books.scss */
   .single-books .book-info {
     margin-left: 280px;
   }
 }
 @media screen and (min-width: 50em) {
-  /* line 113, sass/molecules/_books.scss */
+  /* line 114, sass/molecules/_books.scss */
   .single-books .book-info {
     margin-left: 380px;
   }
