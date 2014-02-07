@@ -68,13 +68,17 @@
     }
 
     #home-portfolio-fullsize {
-        margin-top: -6rem;
+        margin-top: -3rem;
         margin-bottom: 3rem;
         position: relative;
 
         img {
             margin: 0 auto;
             display: block;
+        }
+
+        @include media($small) {
+            margin-top: -6rem;
         }
 
         @include media($large) {
@@ -94,16 +98,16 @@
     background: $tertiary-color;
     color: $white;
     box-shadow: 4px 4px 8px rgba(100,100,100,0.1);
-    opacity: 0.3;
     transition: opacity 0.5s;
-    top: 2rem;
+    top: -5rem;
 
     @include media($smaller) {
-        top: 15rem;
+        opacity: 0.3;
+        top: 10rem;
     }
 
     @include media($large) {
-        top: 11rem;
+        top: 13rem;
     }
 
     &:hover,
