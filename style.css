@@ -743,40 +743,40 @@ img {
 }
 
 @-webkit-keyframes shaky {
-  /* line 10, sass/molecules/_site-header.scss */
+  /* line 9, sass/molecules/_site-header.scss */
   0%, 33% {
     background-position: 0% 0%;
   }
 
-  /* line 14, sass/molecules/_site-header.scss */
+  /* line 13, sass/molecules/_site-header.scss */
   33.0001%, 66% {
     background-position: 0% 50.4%;
   }
 
-  /* line 18, sass/molecules/_site-header.scss */
+  /* line 17, sass/molecules/_site-header.scss */
   66.0001%, 100% {
     background-position: 0% 101%;
   }
 }
 
-@-moz-keyframes shaky {
-  /* line 10, sass/molecules/_site-header.scss */
+@keyframes shaky {
+  /* line 9, sass/molecules/_site-header.scss */
   0%, 33% {
     background-position: 0% 0%;
   }
 
-  /* line 14, sass/molecules/_site-header.scss */
+  /* line 13, sass/molecules/_site-header.scss */
   33.0001%, 66% {
     background-position: 0% 50.4%;
   }
 
-  /* line 18, sass/molecules/_site-header.scss */
+  /* line 17, sass/molecules/_site-header.scss */
   66.0001%, 100% {
     background-position: 0% 101%;
   }
 }
 
-/* line 31, sass/molecules/_site-header.scss */
+/* line 30, sass/molecules/_site-header.scss */
 #masthead {
   *zoom: 1;
   position: relative;
@@ -791,43 +791,42 @@ img {
 #masthead:after {
   clear: both;
 }
-/* line 36, sass/molecules/_site-header.scss */
+/* line 35, sass/molecules/_site-header.scss */
 #masthead .site-title {
   display: block;
 }
-/* line 39, sass/molecules/_site-header.scss */
+/* line 38, sass/molecules/_site-header.scss */
 #masthead .site-title h1 {
   color: transparent;
   font: 0/0 a;
   text-shadow: none;
-  -moz-animation: shaky 0.5s infinite;
   -webkit-animation: shaky 0.5s infinite;
   animation: shaky 0.5s infinite;
-  background: transparent url("images/marsha-riti.svg") no-repeat;
-  background-size: 100%;
+  background: transparent url("images/marsha-riti.svg") no-repeat 50% 0;
+  background-size: 99%;
   width: 210px;
   height: 124px;
   margin: 2rem auto;
   opacity: 0.7;
 }
-/* line 50, sass/molecules/_site-header.scss */
+/* line 49, sass/molecules/_site-header.scss */
 #masthead .site-title:focus, #masthead .site-title:active {
   outline: thin dotted #999;
 }
 @media screen and (min-width: 65em) {
-  /* line 36, sass/molecules/_site-header.scss */
+  /* line 35, sass/molecules/_site-header.scss */
   #masthead .site-title {
     margin: 2rem 0;
     float: left;
   }
-  /* line 57, sass/molecules/_site-header.scss */
+  /* line 56, sass/molecules/_site-header.scss */
   #masthead .site-title h1 {
     width: 250px;
     height: 150px;
   }
 }
 
-/* line 65, sass/molecules/_site-header.scss */
+/* line 64, sass/molecules/_site-header.scss */
 a.skip-link {
   text-align: center;
   background: #70300e;
@@ -838,13 +837,13 @@ a.skip-link {
   transition: background-color 1s;
   padding: 0.75rem 0;
 }
-/* line 76, sass/molecules/_site-header.scss */
+/* line 75, sass/molecules/_site-header.scss */
 a.skip-link:focus {
   background: #e57032;
   border: 4px solid #f0af8d;
 }
 @media screen and (min-width: 50em) {
-  /* line 76, sass/molecules/_site-header.scss */
+  /* line 75, sass/molecules/_site-header.scss */
   a.skip-link:focus {
     color: white;
     width: 100%;

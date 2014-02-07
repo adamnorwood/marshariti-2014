@@ -1,7 +1,6 @@
-$animation-duration: 30s;
+$animation-duration: 15s;
 
 @mixin animation ($name, $duration, $iteration-count) {
-    -moz-animation: $name $duration $iteration-count;
     -webkit-animation: $name $duration $iteration-count;
     animation: $name $duration $iteration-count;
 }
@@ -24,7 +23,7 @@ $animation-duration: 30s;
     @include shaky-ani;
 }
 
-@-moz-keyframes shaky {
+@keyframes shaky {
     @include shaky-ani;
 }
 
@@ -39,8 +38,8 @@ $animation-duration: 30s;
         h1 {
             @include hide-text;
             @include animation(shaky, 0.5s, infinite);
-            background: transparent url('images/marsha-riti.svg') no-repeat;
-            @include background-size(100%);
+            background: transparent url('images/marsha-riti.svg') no-repeat 50% 0;
+            background-size: 99%;
             width: 210px;
             height: 124px;
             margin: 2rem auto;
