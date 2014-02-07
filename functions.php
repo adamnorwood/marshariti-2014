@@ -47,6 +47,12 @@ function marshariti_styles_and_scripts() {
 
     // Register our main scripts file, with jQuery dependency
     wp_enqueue_script( 'marshariti-modernizr', get_stylesheet_directory_uri() . '/js/modernizr.min.js', false, filemtime( get_stylesheet_directory() . '/js/modernizr.min.js' ), false );
+
+    // Point jQuery to the Google API host instead
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"), false, '1.10.2', true);
+    wp_enqueue_script('jquery');
+
     wp_enqueue_script( 'marshariti-scripts',   get_stylesheet_directory_uri() . '/js/scripts.min.js', array('jquery'), filemtime( get_stylesheet_directory() . '/js/scripts.min.js' ), true );
 
 }
