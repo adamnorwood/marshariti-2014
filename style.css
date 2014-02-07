@@ -554,7 +554,7 @@ h3, .title, a.skip-link, #sitewide-navigation .menu-toggle, #sitewide-footer .so
 }
 
 /* line 48, sass/base-typography/_typography.scss */
-h5, input[type="submit"], button, .button, #cancel-comment-reply-link, .wp-caption-text, .entry .footer, .excerpt .header time, .comment-permalink, .comment-notes, .form-allowed-tags, .post-type-archive-books .book-meta-author {
+h5, input[type="submit"], button, .button, #cancel-comment-reply-link, .wp-caption-text, .entry .footer, .excerpt .header time, .comment-permalink, .comment-notes, .form-allowed-tags, .book .book-meta {
   font-size: 12.8px;
   font-size: 0.8rem;
 }
@@ -1556,11 +1556,44 @@ a.skip-link:focus {
 }
 
 /* line 3, sass/molecules/_books.scss */
+.book .book-meta {
+  color: #888888;
+  font-family: Helvetica, Arial, Sans-serif;
+  margin-top: 2rem;
+}
+/* line 9, sass/molecules/_books.scss */
+.book .book-meta p {
+  line-height: 1;
+}
+/* line 14, sass/molecules/_books.scss */
+.book .book-meta-stores {
+  color: #888888;
+  margin-top: 2rem;
+}
+/* line 19, sass/molecules/_books.scss */
+.book .book-meta-stores-list {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin-bottom: 3rem;
+}
+/* line 25, sass/molecules/_books.scss */
+.book .book-meta-stores-list .book-meta-store {
+  display: inline;
+  margin-left: 0.5rem;
+}
+/* line 29, sass/molecules/_books.scss */
+.book .book-meta-stores-list .book-meta-store a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 40, sass/molecules/_books.scss */
 .post-type-archive-books .book {
   margin-bottom: 5rem;
 }
 @media screen and (min-width: 50em) {
-  /* line 3, sass/molecules/_books.scss */
+  /* line 40, sass/molecules/_books.scss */
   .post-type-archive-books .book {
     display: inline-block;
     width: 50%;
@@ -1568,7 +1601,11 @@ a.skip-link:focus {
     padding-right: 5rem;
   }
 }
-/* line 14, sass/molecules/_books.scss */
+/* line 51, sass/molecules/_books.scss */
+.post-type-archive-books .book-meta-stores {
+  clear: both;
+}
+/* line 55, sass/molecules/_books.scss */
 .post-type-archive-books .book-thumbnail {
   margin-bottom: 2rem;
   box-shadow: -8px 8px 8px rgba(128, 128, 128, 0.2);
@@ -1576,52 +1613,75 @@ a.skip-link:focus {
   border: 1px solid #def0eb;
 }
 @media screen and (min-width: 30em) {
-  /* line 14, sass/molecules/_books.scss */
+  /* line 55, sass/molecules/_books.scss */
   .post-type-archive-books .book-thumbnail {
     max-width: 250px;
     max-height: 350px;
   }
 }
 @media screen and (min-width: 65em) {
-  /* line 14, sass/molecules/_books.scss */
+  /* line 55, sass/molecules/_books.scss */
   .post-type-archive-books .book-thumbnail {
     float: left;
     margin-right: 2rem;
   }
 }
-/* line 31, sass/molecules/_books.scss */
+/* line 72, sass/molecules/_books.scss */
 .post-type-archive-books a {
   text-decoration: none;
 }
-/* line 35, sass/molecules/_books.scss */
-.post-type-archive-books .book-meta-author {
-  color: #888888;
-  font-family: Helvetica, Arial, Sans-serif;
-}
-/* line 41, sass/molecules/_books.scss */
-.post-type-archive-books .book-meta-stores {
-  color: #888888;
-  clear: both;
-}
-/* line 46, sass/molecules/_books.scss */
-.post-type-archive-books .book-meta-stores-list {
-  list-style: none;
-  display: inline-block;
-  padding: 0;
-  margin-bottom: 3rem;
-}
-/* line 53, sass/molecules/_books.scss */
-.post-type-archive-books .book-meta-stores-list .book-meta-store {
-  display: inline;
-  margin-left: 0.5rem;
-}
-/* line 57, sass/molecules/_books.scss */
-.post-type-archive-books .book-meta-stores-list .book-meta-store a {
-  color: #fff;
-}
-/* line 69, sass/molecules/_books.scss */
+/* line 81, sass/molecules/_books.scss */
 .post-type-archive-books .read-more:after {
   content: '…';
+}
+
+/* line 90, sass/molecules/_books.scss */
+.single-books .book {
+  *zoom: 1;
+  max-width: 100%;
+  margin-bottom: 4rem;
+}
+/* line 18, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+.single-books .book:before, .single-books .book:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../../../../../../Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/bourbon/addons/_clearfix.scss */
+.single-books .book:after {
+  clear: both;
+}
+/* line 96, sass/molecules/_books.scss */
+.single-books .book-cover-image {
+  width: 95%;
+  height: auto;
+  box-shadow: -8px 8px 8px rgba(128, 128, 128, 0.2);
+  -webkit-transform: rotate(-1.5deg);
+  border: 1px solid #def0eb;
+}
+@media screen and (min-width: 30em) {
+  /* line 96, sass/molecules/_books.scss */
+  .single-books .book-cover-image {
+    float: left;
+    width: 250px;
+  }
+}
+@media screen and (min-width: 50em) {
+  /* line 96, sass/molecules/_books.scss */
+  .single-books .book-cover-image {
+    width: 350px;
+  }
+}
+@media screen and (min-width: 30em) {
+  /* line 113, sass/molecules/_books.scss */
+  .single-books .book-info {
+    margin-left: 280px;
+  }
+}
+@media screen and (min-width: 50em) {
+  /* line 113, sass/molecules/_books.scss */
+  .single-books .book-info {
+    margin-left: 380px;
+  }
 }
 
 /* The following section is for troubleshooting breakpoints,
