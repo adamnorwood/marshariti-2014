@@ -20,6 +20,64 @@
 
         <?php endif; ?>
 
+        <link rel="author" href="https://plus.google.com/108133137841632096375/" />
+
+        <?php if ( is_single() ) : ?>
+
+            <?php
+                $featuredImage = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) );
+
+                if ( !$featuredImage ) {
+                    $featuredImage = get_template_directory_uri() . '/images/marsha-riti.jpg';
+                }
+            ?>
+
+            <meta property="og:url" content="<?= get_permalink() ?>" />
+            <meta property="og:title" content="<?php single_post_title() ?>" />
+            <meta property="og:description" content="<?= strip_tags( get_the_excerpt() ) ?>" />
+            <meta property="og:image" content="<?= $featuredImage ?>" />
+
+            <?php if ( 'books' == $post->post_type ) : ?>
+
+            <meta property="og:type" content="book" />
+            <meta property="og:book:author" content="<?= str_replace( 'Written by ', '', get_field( 'author' ) ) ?>" />
+            <meta property="og:book:isbn" content="<?= get_field( 'isbn-number' ) ?>" />
+            <meta property="og:book:release_date" content="<?= date( 'c', strtotime( get_field( 'publication-date' ) ) ) ?>" />
+
+            <meta property="twitter:description" content="<?= strip_tags( trim( get_field( 'excerpt' ) ) ) ?>" />
+            <meta property="twitter:image" content="<?= reset( wp_get_attachment_image_src( get_field( 'book-cover-image' ), 'book-thumbnail' ) ); ?>" />
+
+            <?php elseif ( 'post' == $post->post_type ): ?>
+
+            <meta property="og:type" content="article" />
+            <meta property="og:published_time" content="<?= get_the_time( 'c' ) ?>" />
+
+            <?php else : ?>
+
+            <meta property="og:type" content="website" />
+            <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>" />
+            <meta property="og:description" content="<?php bloginfo( 'description' ); ?>" />
+            <meta property="twitter:description" content="<?= bloginfo( 'description' ) ?>" />
+            <meta property="twitter:image" content="<?= $featuredImage ?>" />
+
+            <?php endif; ?>
+
+            <meta property="twitter:url" content="<?= get_permalink() ?>" />
+            <meta property="twitter:title" content="<?= single_post_title() ?>" />
+
+        <?php elseif ( is_page() || is_front_page() ) : ?>
+
+            <meta property="og:type" content="website" />
+            <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>" />
+            <meta property="og:description" content="<?php bloginfo( 'description' ); ?>" />
+
+            <meta property="twitter:description" content="<?= bloginfo( 'description' ) ?>" />
+            <meta property="twitter:image" content="<?= get_template_directory_uri() . '/images/marsha-riti.jpg' ?>" />
+            <meta property="twitter:url" content="<?= get_permalink() ?>" />
+            <meta property="twitter:title" content="<?= single_post_title() ?>" />
+
+        <?php endif; ?>
+
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
         <?php wp_head(); ?>
