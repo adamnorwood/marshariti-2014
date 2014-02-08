@@ -26,16 +26,17 @@
 
             <?php
                 $featuredImage = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) );
+                $featuredImageFB = $featuredImage;
 
                 if ( !$featuredImage ) {
-                    $featuredImage = get_template_directory_uri() . '/images/marsha-riti.jpg';
+                    $featuredImage   = get_template_directory_uri() . '/images/marsha-riti.jpg';
+                    $featuredImageFB = get_template_directory_uri() . '/images/marsha-riti-fb.jpg';
                 }
             ?>
 
             <meta property="og:url" content="<?= get_permalink() ?>" />
             <meta property="og:title" content="<?php single_post_title() ?>" />
             <meta property="og:description" content="<?= strip_tags( get_the_excerpt() ) ?>" />
-            <meta property="og:image" content="<?= $featuredImage ?>" />
 
             <?php if ( 'books' == $post->post_type ) : ?>
 
@@ -43,6 +44,7 @@
             <meta property="og:book:author" content="<?= str_replace( 'Written by ', '', get_field( 'author' ) ) ?>" />
             <meta property="og:book:isbn" content="<?= get_field( 'isbn-number' ) ?>" />
             <meta property="og:book:release_date" content="<?= date( 'c', strtotime( get_field( 'publication-date' ) ) ) ?>" />
+            <meta property="og:image" content="<?= reset( wp_get_attachment_image_src( get_field( 'book-cover-image' ), 'book-thumbnail' ) ); ?>" />
 
             <meta property="twitter:description" content="<?= strip_tags( trim( get_field( 'excerpt' ) ) ) ?>" />
             <meta property="twitter:image" content="<?= reset( wp_get_attachment_image_src( get_field( 'book-cover-image' ), 'book-thumbnail' ) ); ?>" />
@@ -57,6 +59,8 @@
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>" />
             <meta property="og:description" content="<?php bloginfo( 'description' ); ?>" />
+            <meta property="og:image" content="<?= $featuredImageFB ?>" />
+
             <meta property="twitter:description" content="<?= bloginfo( 'description' ) ?>" />
             <meta property="twitter:image" content="<?= $featuredImage ?>" />
 
@@ -70,6 +74,7 @@
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>" />
             <meta property="og:description" content="<?php bloginfo( 'description' ); ?>" />
+            <meta property="og:image" content="<?= get_template_directory_uri() . '/images/marsha-riti-fb.jpg' ?>" />
 
             <meta property="twitter:description" content="<?= bloginfo( 'description' ) ?>" />
             <meta property="twitter:image" content="<?= get_template_directory_uri() . '/images/marsha-riti.jpg' ?>" />
