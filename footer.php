@@ -14,7 +14,6 @@
                 <h2 class="visuallyhidden">Social Media Links</h2>
                 <ul class="social-media-links">
                     <li><a href="https://twitter.com/marshariti" class="social-media-icon">Twitter</a></li>
-                    <li><a href="http://www.flickr.com/photos/marshariti/" class="social-media-icon">Flickr</a></li>
                     <li><a href="http://instagram.com/marshariti" class="social-media-icon">Instagram</a></li>
                     <li><a href="http://marshariti.tumblr.com/" class="social-media-icon">Tumblr</a></li>
                     <li><a href="https://www.facebook.com/pages/Marsha-Riti/224593634239663" class="social-media-icon">Facebook</a></li>
