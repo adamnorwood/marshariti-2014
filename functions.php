@@ -32,6 +32,8 @@ function marshariti_setup() {
      */
     add_theme_support( 'post-thumbnails' );
 
+    add_image_size( 'post-thumbnail', 250, 250, true );
+
 }
 add_action( 'after_setup_theme', 'marshariti_setup' );
 
