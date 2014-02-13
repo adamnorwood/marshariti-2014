@@ -27,5 +27,24 @@
 
         <?php wp_footer(); ?>
 
+        <?php if ( !is_front_page() && !is_singular() ) : ?>
+
+        <script>
+            var infinite_scroll = {
+                loading: {
+                    img: "<?= get_template_directory_uri(); ?>/images/loading.gif",
+                    msgText: "<?= 'Loading more posts…' ?>",
+                    finishedMsg: "<?= 'All posts loaded.' ?>"
+                },
+                "nextSelector":".pagination-older-link",
+                "navSelector":".pagination",
+                "itemSelector":"article",
+                "contentSelector":"#main"
+            };
+            jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
+        </script>
+
+        <?php endif; ?>
+
     </body>
 </html>
