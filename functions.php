@@ -162,8 +162,8 @@ add_filter( 'excerpt_more', 'marshariti_filter_excerpt_read_more' );
 function marshariti_pagination( $class = 'pagination' ) {
     global $wp_query;
     if ( $wp_query->max_num_pages > 1 ) {
-        $olderPostsLink = get_next_posts_link( 'Older posts' );
-        $newerPostsLink = ( is_paged() ) ? get_previous_posts_link( 'Newer posts' ) : '';
+        $olderPostsLink = get_next_posts_link( '&larr; Older posts' );
+        $newerPostsLink = ( is_paged() ) ? get_previous_posts_link( 'Newer posts &rarr;' ) : '';
 
         echo '<nav class="' . $class . '">' . $olderPostsLink . $newerPostsLink . '</nav>';
     }
@@ -175,7 +175,7 @@ function marshariti_pagination( $class = 'pagination' ) {
  * @return string The HTML class attribute to be added to the link.
  */
 function marshariti_older_posts_link_attributes() {
-    return 'class="pagination-older-link"';
+    return 'class="pagination-older-link button"';
 }
 add_filter('next_posts_link_attributes',     'marshariti_older_posts_link_attributes' );
 
@@ -185,7 +185,7 @@ add_filter('next_posts_link_attributes',     'marshariti_older_posts_link_attrib
  * @return string The HTML class attribute to be added to the link.
  */
 function marshariti_newer_posts_link_attributes() {
-    return 'class="pagination-newer-link"';
+    return 'class="pagination-newer-link button"';
 }
 add_filter('previous_posts_link_attributes', 'marshariti_newer_posts_link_attributes' );
 
