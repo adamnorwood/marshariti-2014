@@ -47,7 +47,7 @@ function marshariti_styles_and_scripts() {
     // Register the main stylesheet
     wp_enqueue_style( 'marshariti-style', get_stylesheet_uri(), array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
 
-    // Register our main scripts file, with jQuery dependency
+    // Register Modernizr
     wp_enqueue_script( 'marshariti-modernizr', get_stylesheet_directory_uri() . '/js/modernizr.min.js', false, filemtime( get_stylesheet_directory() . '/js/modernizr.min.js' ), false );
 
     // Point jQuery to the Google API host instead
@@ -55,6 +55,7 @@ function marshariti_styles_and_scripts() {
     wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"), false, '1.10.2', true);
     wp_enqueue_script('jquery');
 
+    // Register our main scripts file, with jQuery dependency
     wp_enqueue_script( 'marshariti-scripts',   get_stylesheet_directory_uri() . '/js/scripts.min.js', array('jquery'), filemtime( get_stylesheet_directory() . '/js/scripts.min.js' ), true );
 
 }
@@ -63,8 +64,7 @@ add_action( 'wp_enqueue_scripts', 'marshariti_styles_and_scripts' );
 
 /**
  * Removes jQuery Migrate...we shouldn't need it!
- * @param  [type] $scripts [description]
- * @return [type]          [description]
+ * @param  obj $scripts The WordPress registered scripts object
  */
 function marshariti_dequeue_jquery_migrate( &$scripts){
     if( !is_admin() ) {
