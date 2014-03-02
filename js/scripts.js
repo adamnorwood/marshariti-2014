@@ -32,7 +32,6 @@
         container = nav.find('.menu-primary-menu-container');
 
         button.on( 'click.marshariti, keydown.marshariti', function(e) {
-            console.dir(e);
             if (e.type !== 'click' && e.which !== 13) { return; }
             container.toggleClass( 'toggled-on' );
             menu.toggleClass( 'toggled-on' );
