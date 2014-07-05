@@ -1,0 +1,19 @@
+{
+  "name": "marshariti-2014",
+  "version": "3.1.0",
+  "description": "The theme that powers the website for Austin-based illustrator Marsha Riti.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamnorwood/marshariti-2014.git"
+  },
+  "author": "Adam Norwood",
+  "license": "GNU General Public License v2 or later",
+  "homepage": "https://github.com/adamnorwood/marshariti-2014",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^0.9.0",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
