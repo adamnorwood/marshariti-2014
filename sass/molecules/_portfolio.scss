@@ -2,6 +2,16 @@
     @include clearfix;
 
     margin-top: 7rem;
+    margin-bottom: 5rem;
+    border-bottom: 4.5px dotted $light-gray;
+
+    ::selection {
+        background-color: transparent;
+    }
+
+    ::-moz-selection {
+        background-color: transparent;
+    }
 
     @include media($large) {
         margin-top: -3rem;
@@ -9,20 +19,28 @@
 
     .portfolio-thumbnails {
         display: none;
-        margin-bottom: 5rem;
+        position: relative;
 
         @include media($large) {
             @include span-columns(4);
+            margin-top: -2rem;
+            margin-left: -.75rem;
+            margin-bottom: 5rem;
+            margin-right: 2rem;
+        }
+
+        @include media($larger) {
+            position: static;
         }
     }
 
     .portfolio-image {
         display: block;
         float: left;
-        margin: 0.6666rem;
+        margin: .6666rem;
         height: 100px;
         width: 100px;
-        box-shadow: 5px 5px 8px rgba(0,0,0,0.1);
+        box-shadow: 5px 5px 8px rgba(0,0,0,.1);
     }
 
     .portfolio-image:nth-child(2n) .portfolio-image-link {
@@ -36,8 +54,8 @@
     }
 
     .portfolio-image:nth-child(5n) .portfolio-image-link {
-        -webkit-transform: rotate( 0.75deg );
-        transform: rotate( 0.75deg );
+        -webkit-transform: rotate( .75deg );
+        transform: rotate( .75deg );
     }
 
     .portfolio-image figcaption {
@@ -54,16 +72,16 @@
         display: block;
         width: 100px;
         height: 100px;
-        border: 3px solid transparent;
-
+        border: 2px solid transparent;
 
         &.portfolio-current {
-            border: 3px solid $tertiary-color;
+            border: 2px solid $tertiary-color;
+            box-shadow: 0px 0px 8px rgba(255,128,0,.8);
         }
 
         &:hover,
         &:focus {
-            border: 3px solid $secondary-color;
+            border: 2px solid $secondary-color;
         }
     }
 
@@ -88,34 +106,46 @@
     }
 }
 
+.portfolio-controls {
+    margin-bottom: 1rem;
+}
+
 .portfolio-control {
     @extend %type-size-largest;
-    position: absolute;
-    height: 4rem;
-    width: 4rem;
-    text-align: center;
-    border-radius: 2rem;
     background: $tertiary-color;
+    border-radius: 2rem;
+    border: 3px solid transparent;
+    box-shadow: 4px 4px 8px rgba(100,100,100,.1);
     color: $white;
-    box-shadow: 4px 4px 8px rgba(100,100,100,0.1);
-    transition: opacity 0.5s;
-    top: -5rem;
+    display: inline-block;
+    height: 4rem;
+    position: relative;
+    text-align: center;
+    transition: opacity .5s;
+    width: 4rem;
+    clear: right;
 
     @include media($smaller) {
-        opacity: 0.3;
-        top: 10rem;
+        opacity: .5;
     }
 
-    @include media($large) {
-        top: 13rem;
+    @include media($larger) {
+        font-size: 48px;
+        top: 27rem;
+        height: 5rem;
+        width: 5rem;
+        border-radius: 2.5rem;
+        z-index: 10;
+        position: absolute;
     }
 
     &:hover,
     &:focus,
     &:active {
         cursor: pointer;
-        color: #fff;
+        color: $white;
         opacity: 1;
+        border: 3px dashed $white;
     }
 
     span {
@@ -124,24 +154,28 @@
 }
 
 .portfolio-control-prev {
-    left: 0;
 
-    @include media($large) {
-        left: -25px;
+    left: .5rem;
+
+    @include media($larger) {
+        left: 1.5rem;
     }
 }
 
 .portfolio-control-next {
-    right: 0;
-
     @include media($large) {
-        right: -25px;
+        left: 225px;
+    }
+
+    @include media($larger) {
+        left: auto;
+        right: 1.5rem;
     }
 }
 
 #home-portfolio-fullsize:hover {
     .portfolio-control {
-        opacity: 0.6;
+        opacity: .6;
 
         &:hover,
         &:focus,

@@ -763,7 +763,7 @@ a.skip-link:focus {
 
 #sitewide-navigation .menu-primary-menu-container {
   position: absolute;
-  top: -1.5rem;
+  top: -3.5rem;
   width: 110%;
   border-top: 0.5rem solid #eb905f;
   margin-left: -1rem;
@@ -780,6 +780,7 @@ a.skip-link:focus {
     position: relative;
     width: 100%;
     margin: 0;
+    top: -1.5rem;
   }
   #sitewide-navigation .menu-primary-menu-container.toggled-on {
     border-bottom: 0;
@@ -799,7 +800,7 @@ a.skip-link:focus {
   text-transform: lowercase;
   background-color: #eb905f;
   position: absolute;
-  top: -1.5rem;
+  top: -3.5rem;
   right: 0.5rem;
   color: white;
   transition: background-color 0.5s, padding-top 0.5s;
@@ -1276,11 +1277,19 @@ a.skip-link:focus {
 
 #home-portfolio {
   margin-top: 7rem;
+  margin-bottom: 5rem;
+  border-bottom: 4.5px dotted #dddddd;
 }
 #home-portfolio:after {
   content: "";
   display: table;
   clear: both;
+}
+#home-portfolio ::selection {
+  background-color: transparent;
+}
+#home-portfolio ::-moz-selection {
+  background-color: transparent;
 }
 @media screen and (min-width: 75em) {
   #home-portfolio {
@@ -1289,7 +1298,7 @@ a.skip-link:focus {
 }
 #home-portfolio .portfolio-thumbnails {
   display: none;
-  margin-bottom: 5rem;
+  position: relative;
 }
 @media screen and (min-width: 75em) {
   #home-portfolio .portfolio-thumbnails {
@@ -1297,15 +1306,24 @@ a.skip-link:focus {
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%;
+    margin-top: -2rem;
+    margin-left: -.75rem;
+    margin-bottom: 5rem;
+    margin-right: 2rem;
   }
   #home-portfolio .portfolio-thumbnails:last-child {
     margin-right: 0;
   }
 }
+@media screen and (min-width: 85em) {
+  #home-portfolio .portfolio-thumbnails {
+    position: static;
+  }
+}
 #home-portfolio .portfolio-image {
   display: block;
   float: left;
-  margin: 0.6666rem;
+  margin: .6666rem;
   height: 100px;
   width: 100px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
@@ -1331,13 +1349,14 @@ a.skip-link:focus {
   display: block;
   width: 100px;
   height: 100px;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
 }
 #home-portfolio .portfolio-image-link.portfolio-current {
-  border: 3px solid #ffb800;
+  border: 2px solid #ffb800;
+  box-shadow: 0px 0px 8px rgba(255, 128, 0, 0.8);
 }
 #home-portfolio .portfolio-image-link:hover, #home-portfolio .portfolio-image-link:focus {
-  border: 3px solid #e57032;
+  border: 2px solid #e57032;
 }
 #home-portfolio #home-portfolio-fullsize {
   margin-top: -3rem;
@@ -1366,55 +1385,70 @@ a.skip-link:focus {
   }
 }
 
+.portfolio-controls {
+  margin-bottom: 1rem;
+}
+
 .portfolio-control {
-  position: absolute;
-  height: 4rem;
-  width: 4rem;
-  text-align: center;
-  border-radius: 2rem;
   background: #ffb800;
-  color: white;
+  border-radius: 2rem;
+  border: 3px solid transparent;
   box-shadow: 4px 4px 8px rgba(100, 100, 100, 0.1);
-  transition: opacity 0.5s;
-  top: -5rem;
+  color: white;
+  display: inline-block;
+  height: 4rem;
+  position: relative;
+  text-align: center;
+  transition: opacity .5s;
+  width: 4rem;
+  clear: right;
 }
 @media screen and (min-width: 30em) {
   .portfolio-control {
-    opacity: 0.3;
-    top: 10rem;
+    opacity: .5;
   }
 }
-@media screen and (min-width: 75em) {
+@media screen and (min-width: 85em) {
   .portfolio-control {
-    top: 13rem;
+    font-size: 48px;
+    top: 27rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 2.5rem;
+    z-index: 10;
+    position: absolute;
   }
 }
 .portfolio-control:hover, .portfolio-control:focus, .portfolio-control:active {
   cursor: pointer;
-  color: #fff;
+  color: white;
   opacity: 1;
+  border: 3px dashed white;
 }
 
 .portfolio-control-prev {
-  left: 0;
+  left: .5rem;
 }
-@media screen and (min-width: 75em) {
+@media screen and (min-width: 85em) {
   .portfolio-control-prev {
-    left: -25px;
+    left: 1.5rem;
   }
 }
 
-.portfolio-control-next {
-  right: 0;
-}
 @media screen and (min-width: 75em) {
   .portfolio-control-next {
-    right: -25px;
+    left: 225px;
+  }
+}
+@media screen and (min-width: 85em) {
+  .portfolio-control-next {
+    left: auto;
+    right: 1.5rem;
   }
 }
 
 #home-portfolio-fullsize:hover .portfolio-control {
-  opacity: 0.6;
+  opacity: .6;
 }
 #home-portfolio-fullsize:hover .portfolio-control:hover, #home-portfolio-fullsize:hover .portfolio-control:focus, #home-portfolio-fullsize:hover .portfolio-control:active {
   opacity: 1;

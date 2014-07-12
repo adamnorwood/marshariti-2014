@@ -71,7 +71,6 @@
             currentThumbnail.addClass('portfolio-current');
 
             currentSlide = currentThumbnail.parent().index();
-
         });
 
         // Create the next/prev buttons
@@ -87,11 +86,17 @@
                               updateSlide('prev');
                             });
 
-        fullSizeViewer.append(prevButton).append(nextButton);
+        var portfolioControls = $('<nav class="portfolio-controls" role="navigation" />');
+
+        portfolioControls.prepend(nextButton).prepend(prevButton);
+
+        $('.portfolio-thumbnails').prepend(portfolioControls);
 
         function updateSlide(action) {
+            var numberOfThumbnails = portfolioThumbnails.length;
+
             if (action === 'next') {
-                currentSlide = ((currentSlide + 1) < portfolioThumbnails.length) ? currentSlide + 1 : 0;
+                currentSlide = ((currentSlide + 1) < numberOfThumbnails) ? currentSlide + 1 : 0;
             } else if (action === 'prev') {
                 currentSlide = ((currentSlide - 1 < 0)) ? slideCount - 1 : currentSlide - 1;
             } else {
