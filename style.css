@@ -398,7 +398,7 @@ table {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-.visuallyhidden, #home-portfolio .portfolio-image figcaption, .portfolio-control span, .post-type-archive-books .read-more span {
+.visuallyhidden, .portfolio-thumbnail-caption, .post-type-archive-books .read-more span {
   border: 0;
   clip: rect(0 0 0 0);
   position: absolute;
@@ -408,7 +408,7 @@ table {
   width: 1px;
   height: 1px;
 }
-.visuallyhidden.focusable:active, #home-portfolio .portfolio-image figcaption.focusable:active, .portfolio-control span.focusable:active, .post-type-archive-books .read-more span.focusable:active, .visuallyhidden.focusable:focus, #home-portfolio .portfolio-image figcaption.focusable:focus, .portfolio-control span.focusable:focus, .post-type-archive-books .read-more span.focusable:focus {
+.visuallyhidden.focusable:active, .focusable.portfolio-thumbnail-caption:active, .post-type-archive-books .read-more span.focusable:active, .visuallyhidden.focusable:focus, .focusable.portfolio-thumbnail-caption:focus, .post-type-archive-books .read-more span.focusable:focus {
   clip: auto;
   position: static;
   overflow: visible;
@@ -485,7 +485,7 @@ body {
   text-rendering: optimizeLegitability;
 }
 
-h1, .portfolio-control {
+h1 {
   font-size: 39.0625px;
   font-size: 2.44141rem;
 }
@@ -1276,182 +1276,47 @@ a.skip-link:focus {
 }
 
 #home-portfolio {
-  margin-top: 7rem;
-  margin-bottom: 5rem;
-  border-bottom: 4.5px dotted #dddddd;
+  outline: 1px solid red;
 }
-#home-portfolio:after {
-  content: "";
-  display: table;
-  clear: both;
+
+.portfolio-thumbnails {
+  height: 80px;
 }
-#home-portfolio ::selection {
-  background-color: transparent;
+
+.portfolio-thumbnail {
+  width: 100px !important;
 }
-#home-portfolio ::-moz-selection {
-  background-color: transparent;
-}
-@media screen and (min-width: 75em) {
-  #home-portfolio {
-    margin-top: -3rem;
-  }
-}
-#home-portfolio .portfolio-thumbnails {
-  display: none;
-  position: relative;
-}
-@media screen and (min-width: 75em) {
-  #home-portfolio .portfolio-thumbnails {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
-    margin-top: -2rem;
-    margin-left: -.75rem;
-    margin-bottom: 5rem;
-    margin-right: 2rem;
-  }
-  #home-portfolio .portfolio-thumbnails:last-child {
-    margin-right: 0;
-  }
-}
-@media screen and (min-width: 85em) {
-  #home-portfolio .portfolio-thumbnails {
-    position: static;
-  }
-}
-#home-portfolio .portfolio-image {
+
+.portfolio-thumbnail-link {
   display: block;
-  float: left;
-  margin: .6666rem;
-  height: 100px;
   width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.portfolio-thumbnail-image {
+  width: 100px;
+  height: 100px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
 }
-#home-portfolio .portfolio-image:nth-child(2n) .portfolio-image-link {
+
+.portfolio-thumbnail:nth-child(2n) .portfolio-thumbnail-link {
   -webkit-transform: rotate(-1deg);
   transform: rotate(-1.5deg);
 }
-#home-portfolio .portfolio-image:nth-child(3n) .portfolio-image-link {
+
+.portfolio-thumbnail:nth-child(3n) .portfolio-thumbnail-link {
   -webkit-transform: rotate(1deg);
   transform: rotate(1.5deg);
 }
-#home-portfolio .portfolio-image:nth-child(5n) .portfolio-image-link {
+
+.portfolio-thumbnail:nth-child(5n) .portfolio-thumbnail-link {
   -webkit-transform: rotate(0.75deg);
   transform: rotate(0.75deg);
 }
-#home-portfolio .portfolio-thumbnail {
-  width: 100px;
-  height: 100px;
-}
-#home-portfolio .portfolio-image-link {
-  overflow: hidden;
-  display: block;
-  width: 100px;
-  height: 100px;
-  border: 2px solid transparent;
-}
-#home-portfolio .portfolio-image-link.portfolio-current {
-  border: 2px solid #ffb800;
-  box-shadow: 0px 0px 8px rgba(255, 128, 0, 0.8);
-}
-#home-portfolio .portfolio-image-link:hover, #home-portfolio .portfolio-image-link:focus {
-  border: 2px solid #e57032;
-}
-#home-portfolio #home-portfolio-fullsize {
-  margin-top: -3rem;
-  margin-bottom: 3rem;
-  position: relative;
-}
-#home-portfolio #home-portfolio-fullsize img {
-  margin: 0 auto;
-  display: block;
-}
-@media screen and (min-width: 50em) {
-  #home-portfolio #home-portfolio-fullsize {
-    margin-top: -6rem;
-  }
-}
-@media screen and (min-width: 75em) {
-  #home-portfolio #home-portfolio-fullsize {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%;
-    margin-bottom: 5rem;
-  }
-  #home-portfolio #home-portfolio-fullsize:last-child {
-    margin-right: 0;
-  }
-}
 
 .portfolio-controls {
-  margin-bottom: 1rem;
-}
-
-.portfolio-control {
-  background: #ffb800;
-  border-radius: 2rem;
-  border: 3px solid transparent;
-  box-shadow: 4px 4px 8px rgba(100, 100, 100, 0.1);
-  color: white;
-  display: inline-block;
-  height: 4rem;
-  position: relative;
-  text-align: center;
-  transition: opacity .5s;
-  width: 4rem;
-  clear: right;
-}
-@media screen and (min-width: 30em) {
-  .portfolio-control {
-    opacity: .5;
-  }
-}
-@media screen and (min-width: 85em) {
-  .portfolio-control {
-    font-size: 48px;
-    top: 27rem;
-    height: 5rem;
-    width: 5rem;
-    border-radius: 2.5rem;
-    z-index: 10;
-    position: absolute;
-  }
-}
-.portfolio-control:hover, .portfolio-control:focus, .portfolio-control:active {
-  cursor: pointer;
-  color: white;
-  opacity: 1;
-  border: 3px dashed white;
-}
-
-.portfolio-control-prev {
-  left: .5rem;
-}
-@media screen and (min-width: 85em) {
-  .portfolio-control-prev {
-    left: 1.5rem;
-  }
-}
-
-@media screen and (min-width: 75em) {
-  .portfolio-control-next {
-    left: 225px;
-  }
-}
-@media screen and (min-width: 85em) {
-  .portfolio-control-next {
-    left: auto;
-    right: 1.5rem;
-  }
-}
-
-#home-portfolio-fullsize:hover .portfolio-control {
-  opacity: .6;
-}
-#home-portfolio-fullsize:hover .portfolio-control:hover, #home-portfolio-fullsize:hover .portfolio-control:focus, #home-portfolio-fullsize:hover .portfolio-control:active {
-  opacity: 1;
+  display: none;
 }
 
 .book .book-meta {

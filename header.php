@@ -87,6 +87,8 @@
 
         <?php wp_head(); ?>
 
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.3.6/slick.css" />
+
         <script type="text/javascript">
             /* GOOGLE Analytics */
             if (document.domain.indexOf('.dev') < 0) {

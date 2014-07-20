@@ -8,12 +8,11 @@
     // If there's a custom Thumbnail sized image, we'll display that,
     // otherwise we'll fall back to the WordPress-built thumbnail
     $imageSRC = ( !empty( $thumbnailID ) ) ?
-        wp_get_attachment_image_src( $thumbnailID, 'full' ) :
+        wp_get_attachment_image_src( $thumbnailID, 'post-thumbnail' ) :
         wp_get_attachment_image_src( $fullSizeID, 'thumbnail' );
 
 ?>
 
-<figure class="portfolio-image">
-    <figcaption><?php the_title(); ?></figcaption>
-    <a href="<?= $fullSizeURL ?>" class="portfolio-image-link"><img src="<?= $imageSRC[0] ?>" alt="Thumbnail: <?= get_the_title() ?>" class="portfolio-thumbnail" /></a>
-</figure>
+<div class="portfolio-thumbnail">
+    <a href="<?= $fullSizeURL ?>" class="portfolio-thumbnail-link"><img src="<?= $imageSRC[0] ?>" alt="Thumbnail: <?= get_the_title() ?>" class="portfolio-thumbnail-image" /></a>
+</div>

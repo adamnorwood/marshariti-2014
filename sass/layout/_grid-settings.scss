@@ -18,5 +18,6 @@ $smallish:    new-breakpoint(min-width 40em 1);
 $small:       new-breakpoint(min-width 50em 4);
 $normal:      new-breakpoint(min-width 65em 12);
 $large:       new-breakpoint(min-width 75em 12);
+$largish:     new-breakpoint(min-width 80em 12);
 $larger:      new-breakpoint(min-width 85em 12);
 $largest:     new-breakpoint(min-width 95em 12);

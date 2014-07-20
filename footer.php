@@ -27,6 +27,16 @@
 
         <?php wp_footer(); ?>
 
+        <script src="//cdn.jsdelivr.net/jquery.slick/1.3.6/slick.min.js"></script>
+
+        <script>
+            $('.portfolio-thumbnails').slick( {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                slide: '.portfolio-thumbnail'
+            } );
+        </script>
+
         <?php if ( !is_front_page() && !is_singular() ) : ?>
 
         <script>
@@ -44,6 +54,10 @@
             jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
         </script>
 
+        <?php endif; ?>
+
+        <?php if ( strpos( $_SERVER['SERVER_NAME'], '.dev' ) !== false ): ?>
+        <script src="//localhost:35729/livereload.js"></script>
         <?php endif; ?>
 
     </body>
