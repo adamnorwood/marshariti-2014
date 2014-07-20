@@ -1297,6 +1297,11 @@ a.skip-link:focus {
   margin-top: -1rem;
   margin-bottom: 1rem;
 }
+@media screen and (min-width: 50em) {
+  .portfolio-thumbnails {
+    margin-top: -3rem;
+  }
+}
 
 .portfolio-thumbnail {
   display: inline-block;
@@ -1356,13 +1361,22 @@ a.skip-link:focus {
   top: -1rem;
   transition: opacity .5s;
   width: 3rem;
+  opacity: 0.7;
 }
 .portfolio-control:hover, .portfolio-control:focus {
-  cursor: pointer;
   color: white;
   opacity: 1;
   border: 3px dashed white;
   background-color: #ffb800;
+}
+@media screen and (min-width: 30em) {
+  .portfolio-control {
+    top: .75rem;
+    font-size: 3rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 2.5rem;
+  }
 }
 
 .portfolio-control-prev {
