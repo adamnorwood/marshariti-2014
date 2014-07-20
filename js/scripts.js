@@ -47,7 +47,7 @@
 
         var fullSizeImage       = $('<img id="home-portfolio-fullsize-current" />');
         var fullSizeViewer      = $('<figure id="home-portfolio-fullsize"></figure>');
-        var portfolioThumbnails = portfolio.find('.portfolio-image-link');
+        var portfolioThumbnails = portfolio.find('.portfolio-thumbnail-link');
         var firstThumbnail      = portfolioThumbnails.first();
 
         fullSizeViewer.append(fullSizeImage);
@@ -55,7 +55,7 @@
 
         // Initialize the first image
         fullSizeImage.attr('src', firstThumbnail.attr('href'));
-        firstThumbnail.addClass('portfolio-current');
+        firstThumbnail.addClass('portfolio-thumbnail-current');
 
         var currentSlide = 0;
         var slideCount = portfolioThumbnails.length;
@@ -64,23 +64,23 @@
             e.preventDefault();
 
             var currentThumbnail = $(this);
-            portfolioThumbnails.removeClass('portfolio-current');
+            portfolioThumbnails.removeClass('portfolio-thumbnail-current');
 
             fullSizeImage.attr('src', currentThumbnail.attr('href') );
 
-            currentThumbnail.addClass('portfolio-current');
+            currentThumbnail.addClass('portfolio-thumbnail-current');
 
             currentSlide = currentThumbnail.parent().index();
         });
 
         // Create the next/prev buttons
-        var nextButton   = $('<a class="portfolio-control portfolio-control-next" role="button"><span>Next</span> →</a>')
+        var nextButton   = $('<button class="portfolio-control portfolio-control-next" role="button"><span>Next</span> →</button>')
                             .on('click', function(e) {
                               e.preventDefault();
                               updateSlide('next');
                             });
 
-        var prevButton   = $('<a class="portfolio-control portfolio-control-prev" role="button">← <span>Previous</span></a>')
+        var prevButton   = $('<button class="portfolio-control portfolio-control-prev" role="button">← <span>Previous</span></button>')
                             .on('click', function(e) {
                               e.preventDefault();
                               updateSlide('prev');
@@ -104,11 +104,11 @@
             }
 
             var currentThumbnail = portfolioThumbnails.eq(currentSlide);
-            portfolioThumbnails.removeClass('portfolio-current');
+            portfolioThumbnails.removeClass('portfolio-thumbnail-current');
 
             fullSizeImage.attr('src', currentThumbnail.attr('href') );
 
-            currentThumbnail.addClass('portfolio-current');
+            currentThumbnail.addClass('portfolio-thumbnail-current');
         }
     }
 } )( jQuery );

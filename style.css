@@ -398,7 +398,7 @@ table {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-.visuallyhidden, .portfolio-thumbnail-caption, .post-type-archive-books .read-more span {
+.visuallyhidden, .portfolio-thumbnail-caption, .portfolio-thumbnail-image, .portfolio-control span, .post-type-archive-books .read-more span {
   border: 0;
   clip: rect(0 0 0 0);
   position: absolute;
@@ -408,7 +408,7 @@ table {
   width: 1px;
   height: 1px;
 }
-.visuallyhidden.focusable:active, .focusable.portfolio-thumbnail-caption:active, .post-type-archive-books .read-more span.focusable:active, .visuallyhidden.focusable:focus, .focusable.portfolio-thumbnail-caption:focus, .post-type-archive-books .read-more span.focusable:focus {
+.visuallyhidden.focusable:active, .focusable.portfolio-thumbnail-caption:active, .focusable.portfolio-thumbnail-image:active, .portfolio-control span.focusable:active, .post-type-archive-books .read-more span.focusable:active, .visuallyhidden.focusable:focus, .focusable.portfolio-thumbnail-caption:focus, .focusable.portfolio-thumbnail-image:focus, .portfolio-control span.focusable:focus, .post-type-archive-books .read-more span.focusable:focus {
   clip: auto;
   position: static;
   overflow: visible;
@@ -490,7 +490,7 @@ h1 {
   font-size: 2.44141rem;
 }
 
-h2 {
+h2, .portfolio-control {
   font-size: 31.25px;
   font-size: 1.95313rem;
 }
@@ -1276,27 +1276,47 @@ a.skip-link:focus {
 }
 
 #home-portfolio {
-  outline: 1px solid red;
+  border-bottom: 4.5px dotted #dddddd;
+  margin-bottom: 3rem;
+  margin-top: -2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+#home-portfolio ::selection {
+  background-color: transparent;
+}
+#home-portfolio ::-moz-selection {
+  background-color: transparent;
+}
+#home-portfolio h1.title {
+  text-align: center;
 }
 
 .portfolio-thumbnails {
-  height: 80px;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
 }
 
 .portfolio-thumbnail {
-  width: 100px !important;
+  display: inline-block;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
 }
 
 .portfolio-thumbnail-link {
-  display: block;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  display: inline-block;
+  background-color: #f0f0f0;
+}
+
+.portfolio-thumbnail-current {
+  background-color: #ffb800;
 }
 
 .portfolio-thumbnail-image {
-  width: 100px;
-  height: 100px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1316,7 +1336,32 @@ a.skip-link:focus {
 }
 
 .portfolio-controls {
-  display: none;
+  margin-bottom: 1rem;
+}
+
+.portfolio-control {
+  background: #ffb800;
+  border-radius: 1.5rem;
+  border: 3px solid transparent;
+  box-shadow: 4px 4px 8px rgba(100, 100, 100, 0.1);
+  color: white;
+  display: inline-block;
+  height: 3rem;
+  padding: 0;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  top: -1rem;
+  transition: opacity .5s;
+  width: 3rem;
+}
+
+.portfolio-control-prev {
+  left: .5rem;
+}
+
+.portfolio-control-next {
+  right: .5rem;
 }
 
 .book .book-meta {

@@ -27,16 +27,6 @@
 
         <?php wp_footer(); ?>
 
-        <script src="//cdn.jsdelivr.net/jquery.slick/1.3.6/slick.min.js"></script>
-
-        <script>
-            $('.portfolio-thumbnails').slick( {
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                slide: '.portfolio-thumbnail'
-            } );
-        </script>
-
         <?php if ( !is_front_page() && !is_singular() ) : ?>
 
         <script>
