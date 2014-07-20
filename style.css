@@ -1311,6 +1311,9 @@ a.skip-link:focus {
   display: inline-block;
   background-color: #f0f0f0;
 }
+.portfolio-thumbnail-link:hover, .portfolio-thumbnail-link:focus {
+  background-color: #e57032;
+}
 
 .portfolio-thumbnail-current {
   background-color: #ffb800;
@@ -1340,7 +1343,7 @@ a.skip-link:focus {
 }
 
 .portfolio-control {
-  background: #ffb800;
+  background-color: #ffb800;
   border-radius: 1.5rem;
   border: 3px solid transparent;
   box-shadow: 4px 4px 8px rgba(100, 100, 100, 0.1);
@@ -1348,12 +1351,18 @@ a.skip-link:focus {
   display: inline-block;
   height: 3rem;
   padding: 0;
-  font-weight: bold;
   position: absolute;
   text-align: center;
   top: -1rem;
   transition: opacity .5s;
   width: 3rem;
+}
+.portfolio-control:hover, .portfolio-control:focus {
+  cursor: pointer;
+  color: white;
+  opacity: 1;
+  border: 3px dashed white;
+  background-color: #ffb800;
 }
 
 .portfolio-control-prev {

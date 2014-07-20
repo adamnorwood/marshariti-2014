@@ -41,6 +41,11 @@
     border-radius: 6px;
     display: inline-block;
     background-color: $faint-gray;
+
+    &:hover,
+    &:focus {
+        background-color: $secondary-color;
+    }
 }
 
 .portfolio-thumbnail-current {
@@ -73,7 +78,7 @@
 
 .portfolio-control {
     @extend %type-size-larger;
-    background: $tertiary-color;
+    background-color: $tertiary-color;
     border-radius: 1.5rem;
     border: 3px solid transparent;
     box-shadow: 4px 4px 8px rgba(100,100,100,.1);
@@ -81,16 +86,25 @@
     display: inline-block;
     height: 3rem;
     padding: 0;
-    font-weight: bold;
     position: absolute;
     text-align: center;
     top: -1rem;
     transition: opacity .5s;
     width: 3rem;
 
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        color: $white;
+        opacity: 1;
+        border: 3px dashed $white;
+        background-color: $tertiary-color;
+    }
+
     span {
         @extend .visuallyhidden;
     }
+
 }
 
 .portfolio-control-prev {
@@ -236,40 +250,6 @@
 //         border-radius: 2.5rem;
 //         z-index: 10;
 //     }
-
-//     &:hover,
-//     &:focus,
-//     &:active {
-//         cursor: pointer;
-//         color: $white;
-//         opacity: 1;
-//         border: 3px dashed $white;
-//     }
-
-//     span {
-//         @extend .visuallyhidden;
-//     }
-// }
-
-// .portfolio-control-prev {
-
-//     left: .5rem;
-
-//     @include media($larger) {
-//         left: 1.5rem;
-//     }
-// }
-
-// .portfolio-control-next {
-//     @include media($large) {
-//         left: 225px;
-//     }
-
-//     @include media($larger) {
-//         left: auto;
-//         right: 1.5rem;
-//     }
-// }
 
 // #home-portfolio-fullsize:hover {
 //     .portfolio-control {
