@@ -48,6 +48,7 @@
         var fullSizeImage       = $('<img id="home-portfolio-fullsize-current" />');
         var fullSizeViewer      = $('<figure id="home-portfolio-fullsize"></figure>');
         var portfolioThumbnails = portfolio.find('.portfolio-thumbnail-link');
+        var numberOfThumbnails  = portfolioThumbnails.length;
         var firstThumbnail      = portfolioThumbnails.first();
 
         fullSizeViewer.append(fullSizeImage);
@@ -57,8 +58,7 @@
         fullSizeImage.attr('src', firstThumbnail.attr('href'));
         firstThumbnail.addClass('portfolio-thumbnail-current');
 
-        var currentSlide = 0;
-        var slideCount = portfolioThumbnails.length;
+        var currentSlide = 1;
 
         portfolioThumbnails.on('click', function(e) {
             e.preventDefault();
@@ -71,6 +71,7 @@
             currentThumbnail.addClass('portfolio-thumbnail-current');
 
             currentSlide = currentThumbnail.parent().index();
+
         });
 
         // Create the next/prev buttons
@@ -93,22 +94,21 @@
         $('.portfolio-thumbnails').prepend(portfolioControls);
 
         function updateSlide(action) {
-            var numberOfThumbnails = portfolioThumbnails.length;
 
             if (action === 'next') {
                 currentSlide = ((currentSlide + 1) < numberOfThumbnails) ? currentSlide + 1 : 0;
             } else if (action === 'prev') {
-                currentSlide = ((currentSlide - 1 < 0)) ? slideCount - 1 : currentSlide - 1;
-            } else {
-                currentSlide = action;
+                currentSlide = ((currentSlide - 1 < 0)) ? numberOfThumbnails - 1 : currentSlide - 1;
             }
 
-            var currentThumbnail = portfolioThumbnails.eq(currentSlide);
+            var currentThumbnail = portfolioThumbnails.eq(currentSlide - 1);
             portfolioThumbnails.removeClass('portfolio-thumbnail-current');
 
             fullSizeImage.attr('src', currentThumbnail.attr('href') );
 
             currentThumbnail.addClass('portfolio-thumbnail-current');
+
         }
+
     }
 } )( jQuery );
