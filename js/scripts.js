@@ -74,6 +74,20 @@
 
         });
 
+        // Add keyboard navigation handling for the left/right arrow keys
+        $(document).keydown(function(e) {
+            switch (e.which) {
+                case 37:
+                    updateSlide('prev');
+                    return false;
+                    break;
+                case 39:
+                    updateSlide('next');
+                    return false;
+                    break;
+            }
+        });
+
         // Create the next/prev buttons
         var nextButton   = $('<button class="portfolio-control portfolio-control-next" role="button"><span>Next</span> →</button>')
                             .on('click', function(e) {
