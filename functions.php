@@ -55,8 +55,14 @@ function marshariti_styles_and_scripts() {
     wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"), false, '1.10.2', true);
     wp_enqueue_script('jquery');
 
+    // Add the touchSwipe jQuery library for the Portfolio if on the homepage
+    if ( is_front_page() ) {
+        wp_enqueue_script( 'jquery-touchSwipe', get_stylesheet_directory_uri() . '/js/jquery.touchSwipe.min.js', array('jquery'), filemtime( get_stylesheet_directory() . '/js/jquery.touchSwipe.min.js'), true );
+    }
+
     // Register our main scripts file, with jQuery dependency
     wp_enqueue_script( 'marshariti-scripts',   get_stylesheet_directory_uri() . '/js/scripts.min.js', array('jquery'), filemtime( get_stylesheet_directory() . '/js/scripts.min.js' ), true );
+
 
 }
 add_action( 'wp_enqueue_scripts', 'marshariti_styles_and_scripts' );

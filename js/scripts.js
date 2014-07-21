@@ -51,7 +51,10 @@
         var numberOfThumbnails  = portfolioThumbnails.length;
         var firstThumbnail      = portfolioThumbnails.first();
 
-        fullSizeViewer.append(fullSizeImage);
+        fullSizeViewer.append(fullSizeImage).swipe( {
+            swipeLeft:(function(){ updateSlide('next'); }),
+            swipeRight:(function(){ updateSlide('prev'); })
+        } );
         portfolio.append(fullSizeViewer);
 
         // Initialize the first image
