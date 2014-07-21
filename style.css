@@ -1276,11 +1276,13 @@ a.skip-link:focus {
 }
 
 #home-portfolio {
-  border-bottom: 4.5px dotted #dddddd;
-  margin-bottom: 3rem;
   margin-top: -2rem;
-  padding-bottom: 2rem;
   position: relative;
+}
+#home-portfolio:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 #home-portfolio ::selection {
   background-color: transparent;
@@ -1290,6 +1292,11 @@ a.skip-link:focus {
 }
 #home-portfolio h1.title {
   text-align: center;
+}
+@media screen and (min-width: 75em) {
+  #home-portfolio h1.title {
+    display: none;
+  }
 }
 
 .portfolio-thumbnails {
@@ -1302,11 +1309,40 @@ a.skip-link:focus {
     margin-top: -3rem;
   }
 }
+@media screen and (min-width: 75em) {
+  .portfolio-thumbnails {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    margin-top: 5rem;
+  }
+  .portfolio-thumbnails:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 85em) {
+  .portfolio-thumbnails {
+    margin-top: -2rem;
+  }
+}
 
 .portfolio-thumbnail {
   display: inline-block;
   margin-left: 0.1rem;
   margin-right: 0.1rem;
+}
+.portfolio-thumbnail:nth-child(2n) .portfolio-thumbnail-link {
+  -webkit-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+}
+.portfolio-thumbnail:nth-child(3n) .portfolio-thumbnail-link {
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+.portfolio-thumbnail:nth-child(5n) .portfolio-thumbnail-link {
+  -webkit-transform: rotate(0.75deg);
+  transform: rotate(0.75deg);
 }
 
 .portfolio-thumbnail-link {
@@ -1319,32 +1355,52 @@ a.skip-link:focus {
 .portfolio-thumbnail-link:hover, .portfolio-thumbnail-link:focus {
   background-color: #e57032;
 }
+@media screen and (min-width: 75em) {
+  .portfolio-thumbnail-link {
+    background-color: white;
+    border-radius: 2px;
+    border: 4px solid white;
+    box-shadow: 5px 5px 8px rgba(92, 92, 92, 0.1);
+    display: block;
+    float: left;
+    height: 100px;
+    margin: .5rem;
+    overflow: hidden;
+    transition: border .25s;
+    width: 100px;
+  }
+  .portfolio-thumbnail-link:hover, .portfolio-thumbnail-link:focus {
+    background-color: transparent;
+    border: 4px solid #e57032;
+  }
+}
 
 .portfolio-thumbnail-current {
   background-color: #ffb800;
 }
-
-.portfolio-thumbnail-image {
-  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+@media screen and (min-width: 75em) {
+  .portfolio-thumbnail-current {
+    background-color: transparent;
+    border: 4px solid #ffb800;
+  }
 }
 
-.portfolio-thumbnail:nth-child(2n) .portfolio-thumbnail-link {
-  -webkit-transform: rotate(-1deg);
-  transform: rotate(-1.5deg);
-}
-
-.portfolio-thumbnail:nth-child(3n) .portfolio-thumbnail-link {
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1.5deg);
-}
-
-.portfolio-thumbnail:nth-child(5n) .portfolio-thumbnail-link {
-  -webkit-transform: rotate(0.75deg);
-  transform: rotate(0.75deg);
+@media screen and (min-width: 75em) {
+  .portfolio-thumbnail-image {
+    clip: auto;
+    clip: rect(auto auto auto auto);
+    position: static;
+    overflow: visible;
+    margin: 0;
+    width: auto;
+    height: auto;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .portfolio-controls {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .portfolio-control {
@@ -1361,9 +1417,9 @@ a.skip-link:focus {
   top: -1rem;
   transition: opacity .5s;
   width: 3rem;
-  opacity: 0.7;
+  opacity: 0.6;
 }
-.portfolio-control:hover, .portfolio-control:focus {
+.portfolio-control:hover, .portfolio-control:focus, .portfolio-control:active {
   color: white;
   opacity: 1;
   border: 3px dashed white;
@@ -1371,20 +1427,82 @@ a.skip-link:focus {
 }
 @media screen and (min-width: 30em) {
   .portfolio-control {
-    top: .75rem;
+    border-radius: 2.5rem;
     font-size: 3rem;
     height: 5rem;
+    top: .75rem;
     width: 5rem;
-    border-radius: 2.5rem;
+  }
+}
+@media screen and (min-width: 85em) {
+  .portfolio-control {
+    top: 12rem;
+  }
+}
+@media screen and (min-width: 95em) {
+  .portfolio-control {
+    border-radius: 3rem;
+    height: 6rem;
+    width: 6rem;
   }
 }
 
 .portfolio-control-prev {
   left: .5rem;
 }
+@media screen and (min-width: 85em) {
+  .portfolio-control-prev {
+    left: -6rem;
+  }
+}
+@media screen and (min-width: 95em) {
+  .portfolio-control-prev {
+    left: -12rem;
+  }
+}
 
 .portfolio-control-next {
   right: .5rem;
+}
+@media screen and (min-width: 75em) {
+  .portfolio-control-next {
+    left: 17.5rem;
+  }
+}
+@media screen and (min-width: 85em) {
+  .portfolio-control-next {
+    left: auto;
+    right: -6rem;
+  }
+}
+@media screen and (min-width: 95em) {
+  .portfolio-control-next {
+    right: -12rem;
+  }
+}
+
+#home-portfolio-fullsize img {
+  margin: 0 auto;
+  display: block;
+}
+@media screen and (min-width: 75em) {
+  #home-portfolio-fullsize {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-top: -4rem;
+    margin-bottom: 5rem;
+  }
+  #home-portfolio-fullsize:last-child {
+    margin-right: 0;
+  }
+}
+
+#home-blog-archive {
+  border-top: 4.5px dotted #eaeaea;
+  margin-top: 2rem;
+  padding-top: 4rem;
 }
 
 .book .book-meta {
