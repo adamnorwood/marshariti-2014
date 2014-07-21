@@ -762,12 +762,13 @@ a.skip-link:focus {
 }
 
 #sitewide-navigation .menu-primary-menu-container {
-  position: absolute;
-  top: -3.5rem;
+  position: fixed;
+  top: 0;
   width: 110%;
   border-top: 0.5rem solid #eb905f;
   margin-left: -1rem;
   margin-right: -1rem;
+  z-index: 5;
 }
 #sitewide-navigation .menu-primary-menu-container.toggled-on {
   border-bottom: 0.5rem solid #eb905f;
@@ -799,8 +800,8 @@ a.skip-link:focus {
   font-weight: normal;
   text-transform: lowercase;
   background-color: #eb905f;
-  position: absolute;
-  top: -3.5rem;
+  position: fixed;
+  top: 0;
   right: 0.5rem;
   color: white;
   transition: background-color 0.5s, padding-top 0.5s;
