@@ -6,7 +6,7 @@
      */
     $(document).ready(function() {
         setupNavButton();
-        setupPortfolioCarousel();
+        setupPortfolio();
     });
 
     /**
@@ -39,93 +39,109 @@
         } );
     }
 
-    function setupPortfolioCarousel() {
 
-        var portfolio = $('#home-portfolio');
+    function setupPortfolio() {
 
-        if ( !portfolio ) { return; }
+            var portfolio = $('#home-portfolio');
 
-        var fullSizeImage       = $('<img id="home-portfolio-fullsize-current" />');
-        var fullSizeViewer      = $('<figure id="home-portfolio-fullsize"></figure>');
-        var portfolioThumbnails = portfolio.find('.portfolio-thumbnail-link');
-        var numberOfThumbnails  = portfolioThumbnails.length;
-        var firstThumbnail      = portfolioThumbnails.first();
+            // Test for the portfolio's existence before progressing
+            if ( !portfolio ) { return; }
 
-        fullSizeViewer.append(fullSizeImage).swipe( {
-            swipeLeft:(function(){ updateSlide('next'); }),
-            swipeRight:(function(){ updateSlide('prev'); })
-        } );
-        portfolio.append(fullSizeViewer);
+            // Gather some infos about our existing thumbnail links
+            var portfolioThumbnails = portfolio.find('.portfolio-thumbnail-link');
+            var numOfThumbnails     = portfolioThumbnails.length;
 
-        // Initialize the first image
-        fullSizeImage.attr('src', firstThumbnail.attr('href'));
-        firstThumbnail.addClass('portfolio-thumbnail-current');
+            // Create the HTML containers for our full-size images
+            var fullSizeViewer = $('<figure id="home-portfolio-fullsize"></figure>');
+            var fullSizeImage  = $('<img />');
+            var offscreenImage = $('<img />');
 
-        var currentSlide = 1;
+            fullSizeViewer.append(fullSizeImage);
 
-        portfolioThumbnails.on('click', function(e) {
-            e.preventDefault();
+            // Add swipe functionality via the jQuery touchSwipe plugin
+            fullSizeViewer.swipe({
+                swipeLeft:(function(){ swapSlide('next'); }),
+                swipeRight:(function(){ swapSlide('prev'); })
+            });
 
-            var currentThumbnail = $(this);
-            portfolioThumbnails.removeClass('portfolio-thumbnail-current');
+            // Add the viewer to the homepage portfolio section
+            portfolio.append(fullSizeViewer);
 
-            fullSizeImage.attr('src', currentThumbnail.attr('href') );
+            portfolioThumbnails.each(function(index) {
+                var thisThumbnail = $(this);
+                thisThumbnail.data('index', index);
+                thisThumbnail.on('click', function(e) {
+                    e.preventDefault();
+                    swapSlide( thisThumbnail );
+                });
+            });
 
-            currentThumbnail.addClass('portfolio-thumbnail-current');
+            // Pop in the first image!
+            swapSlide(portfolioThumbnails.first());
 
-            currentSlide = currentThumbnail.parent().index();
+            function swapSlide(slide) {
 
-        });
+                // Handle the magic next/prev functionality
+                if (slide == 'prev') {
+                    slide = portfolioThumbnails.eq(fullSizeViewer.data('prevIndex'));
+                } else if (slide == 'next') {
+                    slide = portfolioThumbnails.eq(fullSizeViewer.data('nextIndex'));
+                }
 
-        // Add keyboard navigation handling for the left/right arrow keys
-        $(document).keydown(function(e) {
-            switch (e.which) {
-                case 37:
-                    updateSlide('prev');
-                    return false;
-                    break;
-                case 39:
-                    updateSlide('next');
-                    return false;
-                    break;
-            }
-        });
+                // Style up the current thumbnail
+                $('.portfolio-thumbnail-current').removeClass('portfolio-thumbnail-current');
+                slide.addClass('portfolio-thumbnail-current');
 
-        // Create the next/prev buttons
-        var nextButton   = $('<button class="portfolio-control portfolio-control-next" role="button"><span>Next</span> →</button>')
-                            .on('click', function(e) {
-                              e.preventDefault();
-                              updateSlide('next');
-                            });
+                fullSizeViewer.addClass('is-loading');
 
-        var prevButton   = $('<button class="portfolio-control portfolio-control-prev" role="button">← <span>Previous</span></button>')
-                            .on('click', function(e) {
-                              e.preventDefault();
-                              updateSlide('prev');
-                            });
+                fullSizeImage.hide();
 
-        var portfolioControls = $('<nav class="portfolio-controls" role="navigation" />');
+                // Swap out the images
+                offscreenImage.attr('src', slide.attr('href')).load(function() {
+                    fullSizeImage.attr('src', slide.attr('href')).fadeIn(250);
+                    fullSizeViewer.removeClass('is-loading');
+                });
 
-        portfolioControls.prepend(nextButton).prepend(prevButton);
+                // Update the prev/next indexes
+                var index = slide.data('index');
+                fullSizeViewer.data('nextIndex', (index == numOfThumbnails - 1) ? 0 : (index + 1));
+                fullSizeViewer.data('prevIndex', (index == 0) ? (numOfThumbnails - 1) : (index - 1));
 
-        $('.portfolio-thumbnails').prepend(portfolioControls);
-
-        function updateSlide(action) {
-
-            if (action === 'next') {
-                currentSlide = ((currentSlide + 1) < numberOfThumbnails) ? currentSlide + 1 : 0;
-            } else if (action === 'prev') {
-                currentSlide = ((currentSlide - 1 < 0)) ? numberOfThumbnails - 1 : currentSlide - 1;
             }
 
-            var currentThumbnail = portfolioThumbnails.eq(currentSlide - 1);
-            portfolioThumbnails.removeClass('portfolio-thumbnail-current');
+            // Create the next/prev buttons
+            var nextButton   = $('<button class="portfolio-control portfolio-control-next" role="button"><span>Next</span> →</button>')
+                                .on('click', function(e) {
+                                  e.preventDefault();
+                                  swapSlide('next');
+                                });
 
-            fullSizeImage.attr('src', currentThumbnail.attr('href') );
+            var prevButton   = $('<button class="portfolio-control portfolio-control-prev" role="button">← <span>Previous</span></button>')
+                                .on('click', function(e) {
+                                  e.preventDefault();
+                                  swapSlide('prev');
+                                });
 
-            currentThumbnail.addClass('portfolio-thumbnail-current');
+            var portfolioControls = $('<nav class="portfolio-controls" role="navigation" />');
 
-        }
+            portfolioControls.prepend(nextButton).prepend(prevButton);
+
+            $('.portfolio-thumbnails').prepend(portfolioControls);
+
+            // Add keyboard navigation handling for the left/right arrow keys
+            $(document).keydown(function(e) {
+                switch (e.which) {
+                    case 37:
+                        swapSlide('prev');
+                        return false;
+                        break;
+                    case 39:
+                        swapSlide('next');
+                        return false;
+                        break;
+                }
+            });
 
     }
+
 } )( jQuery );
