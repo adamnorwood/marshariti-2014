@@ -137,6 +137,26 @@
 
             }
 
+            // If the display isn't large enough to have thumbnails
+            // (as determined by the Conditional CSS media query trick),
+            // then they won't load...yay, performance!
+            // Code inspired by: css-tricks.com/examples/ConditionalCSS/
+            $(window).on('resize', function() {
+                var size = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+
+                /* Ridiculous thing to deal with inconsistent returning of
+                   value from query. Some browsers have quotes some don't */
+                size = size.replace(/"/g, "");
+                size = size.replace(/'/g, "");
+                if (size == 'wide') {
+                    $('.portfolio-thumbnail-image').each(function() {
+                        var $currentThumbnail = $(this);
+                        $currentThumbnail.attr('src', $currentThumbnail.attr('data-src'));
+                    });
+                }
+
+            }).resize();
+
             // Create the next/prev buttons
             var nextButton   = $('<button class="portfolio-control portfolio-control-next" role="button"><span>Next</span> →</button>')
                                 .on('click', function(e) {

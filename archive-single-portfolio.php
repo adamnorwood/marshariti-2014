@@ -14,5 +14,5 @@
 ?>
 
 <div class="portfolio-thumbnail">
-    <a href="<?= $fullSizeURL ?>" class="portfolio-thumbnail-link"><img src="<?= $imageSRC[0] ?>" alt="Thumbnail: <?= get_the_title() ?>" class="portfolio-thumbnail-image" /></a>
+    <a href="<?= $fullSizeURL ?>" class="portfolio-thumbnail-link"><img data-src="<?= $imageSRC[0] ?>" alt="Thumbnail: <?= get_the_title() ?>" class="portfolio-thumbnail-image" /></a>
 </div>

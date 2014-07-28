@@ -1276,6 +1276,16 @@ a.skip-link:focus {
   padding: 0.75em;
 }
 
+body:after {
+  display: none;
+  content: 'narrow';
+}
+
+@media screen and (min-width: 75em) {
+  body:after {
+    content: 'wide';
+  }
+}
 #home-portfolio {
   margin-top: -2rem;
   position: relative;

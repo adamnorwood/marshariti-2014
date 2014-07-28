@@ -1,3 +1,15 @@
+// Conditional CSS+JS trick via http://css-tricks.com/examples/ConditionalCSS/
+body:after {
+    display: none;
+    content: 'narrow';
+}
+
+@include media($large) {
+    body:after {
+        content: 'wide';
+    }
+}
+
 #home-portfolio {
     @include clearfix;
     margin-top: -2rem;
