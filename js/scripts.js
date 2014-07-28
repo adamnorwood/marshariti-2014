@@ -141,7 +141,11 @@
             // (as determined by the Conditional CSS media query trick),
             // then they won't load...yay, performance!
             // Code inspired by: css-tricks.com/examples/ConditionalCSS/
+            var thumbnailsLoaded = false;
             $(window).on('resize', function() {
+
+                if (thumbnailsLoaded) return;
+
                 var size = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
 
                 /* Ridiculous thing to deal with inconsistent returning of
@@ -149,10 +153,13 @@
                 size = size.replace(/"/g, "");
                 size = size.replace(/'/g, "");
                 if (size == 'wide') {
-                    $('.portfolio-thumbnail-image').each(function() {
-                        var $currentThumbnail = $(this);
-                        $currentThumbnail.attr('src', $currentThumbnail.attr('data-src'));
+                    portfolioThumbnails.each(function() {
+                        var currentThumbnail = $(this);
+                        var thumbnailURL = currentThumbnail.attr('data-thumbnail');
+                        var thumbnailImg = $('<img alt="" class="portfolio-thumbnail-image">').attr('src', thumbnailURL);
+                        currentThumbnail.append(thumbnailImg);
                     });
+                    thumbnailsLoaded = true;
                 }
 
             }).resize();
