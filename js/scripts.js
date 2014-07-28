@@ -52,17 +52,45 @@
             var numOfThumbnails     = portfolioThumbnails.length;
 
             // Create the HTML containers for our full-size images
-            var fullSizeViewer = $('<figure id="home-portfolio-fullsize"></figure>');
-            var fullSizeImage  = $('<img />');
-            var offscreenImage = $('<img />');
+            var fullSizeViewer     = $('<figure id="home-portfolio-fullsize"></figure>');
+            var fullSizeImage      = $('<img>');
+            var offscreenImage     = $('<img>');
 
             fullSizeViewer.append(fullSizeImage);
 
             // Add swipe functionality via the jQuery touchSwipe plugin
             fullSizeViewer.swipe({
-                swipeLeft:(function(){ swapSlide('next'); }),
-                swipeRight:(function(){ swapSlide('prev'); })
+                allowPageScroll: 'vertical',
+                swipeStatus: enableDragging,
+                threshold: 64
             });
+
+            // Via the touchSwipe JS demo: labs.rampinteractive.co.uk/touchSwipe/demos/Image_gallery_example.html
+            function enableDragging(event, phase, direction, distance) {
+                if (phase == 'move' && (direction == 'left' || direction == 'right')) {
+                    if (direction == 'left') {
+                        scrollImages(distance);
+                    } else if (direction == 'right') {
+                        scrollImages(-distance);
+                    }
+                } else if (phase == 'end') {
+
+                    fullSizeViewer.css('transform', 'none');
+                    if (direction == 'left') {
+                        swapSlide('next');
+                    } else if (direction == 'right') {
+                        swapSlide('prev');
+                    }
+
+                } else if (phase == 'cancel') {
+                    fullSizeViewer.css('transform', 'none');
+                }
+            }
+
+            function scrollImages(distance) {
+                var value = (distance < 0 ? '' : '-') + Math.abs(distance).toString();
+                fullSizeViewer.css('transform', 'translate(' + value + 'px, 0)');
+            }
 
             // Add the viewer to the homepage portfolio section
             portfolio.append(fullSizeViewer);
@@ -94,10 +122,10 @@
 
                 fullSizeViewer.addClass('is-loading');
 
-                fullSizeImage.hide();
+                fullSizeImage.fadeOut(0);
 
                 // Swap out the images
-                offscreenImage.attr('src', slide.attr('href')).load(function() {
+                var $newImg = $('<img>').attr('src', slide.attr('href')).load(function() {
                     fullSizeImage.attr('src', slide.attr('href')).fadeIn(250);
                     fullSizeViewer.removeClass('is-loading');
                 });

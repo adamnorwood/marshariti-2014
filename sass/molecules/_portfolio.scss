@@ -118,6 +118,7 @@
 
 .portfolio-controls {
     margin-bottom: 1.5rem;
+    z-index: 10;
 }
 
 .portfolio-control {
@@ -136,6 +137,7 @@
     transition: opacity .5s;
     width: 3rem;
     opacity: 0.6;
+    z-index: 10;
 
     &:hover,
     &:focus,
@@ -202,10 +204,15 @@
 #home-portfolio-fullsize {
 
     min-height: 200px;
+    z-index: 0;
 
     img {
         margin: 0 auto;
         display: block;
+        transition-property: transform;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+        transform: translate(0,0);
     }
 
     @include media($large) {
