@@ -122,11 +122,11 @@
 
                 fullSizeViewer.addClass('is-loading');
 
-                fullSizeImage.fadeOut(0);
+                fullSizeImage.hide();
 
                 // Swap out the images
                 var $newImg = $('<img>').attr('src', slide.attr('href')).load(function() {
-                    fullSizeImage.attr('src', slide.attr('href')).fadeIn(250);
+                    fullSizeImage.attr('src', slide.attr('href')).show();
                     fullSizeViewer.removeClass('is-loading');
                 });
 

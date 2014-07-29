@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                     'style.css' : 'sass/style.scss'
                 },
                 options: {
-                    style: 'expanded',
+                    style: 'compressed',
                     sourcemap: true
                 }
             }
