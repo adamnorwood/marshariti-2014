@@ -152,7 +152,6 @@ body:after {
     z-index: 10;
 
     &:hover,
-    &:focus,
     &:active {
         color: $white;
         opacity: 1;
@@ -160,9 +159,15 @@ body:after {
         background-color: $tertiary-color;
     }
 
+    &:focus {
+        background-color: $tertiary-color;
+    }
+
     span {
         @extend .visuallyhidden;
     }
+
+    @include jiggle;
 
     @include media($smaller) {
         border-radius: 2.5rem;
