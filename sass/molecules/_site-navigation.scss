@@ -6,12 +6,12 @@
         border-top: 0.5rem solid lighten($secondary-color, 10%);
         margin-left: -1rem;
         margin-right: -1rem;
-        z-index: 5;
+        z-index: 15;
 
         &.toggled-on {
             border-bottom: 0.5rem solid lighten($secondary-color, 10%);
             box-shadow: 0 5px 12px rgba(0,0,0,0.1);
-            z-index: 5;
+            z-index: 15;
         }
 
         @include media($small) {
@@ -52,7 +52,7 @@
         border-bottom-left-radius: 6px;
         border: 3px solid transparent;
         border-top: 0;
-        z-index: 9;
+        z-index: 16;
         box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
 
         &:hover, &:focus {
